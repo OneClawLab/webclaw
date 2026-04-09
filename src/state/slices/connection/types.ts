@@ -14,8 +14,8 @@ export interface ConnectionState {
 export const initialState: ConnectionState = {
   status: 'disconnected',
   host: '127.0.0.1',
-  port: 29212,
-  channelId: 'webui:default',
+  port: 29214,
+  channelId: 'webui:main',
   peerId: 'owner',
   lastHeartbeat: 0,
   reconnectAttempt: 0,

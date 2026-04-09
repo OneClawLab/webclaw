@@ -19,3 +19,4 @@ logs
 .eslintcache
 *.log*
 tmp
+test-results

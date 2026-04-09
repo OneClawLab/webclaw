@@ -79,8 +79,8 @@ function createWindow(): void {
   // Initialize XgwClient and register IPC bridge
   const defaultXgwConfig: XgwClientConfig = {
     host: '127.0.0.1',
-    port: 29212,
-    channelId: 'webui:default',
+    port: 29214,
+    channelId: 'webui:main',
     peerId: 'owner',
   }
   const storage = new StorageImpl()
