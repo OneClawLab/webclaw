@@ -89,7 +89,9 @@ const xgwAPI = {
   updateConfig: (config: XgwClientConfig) =>
     ipcRenderer.invoke('xgw:updateConfig', config),
   onFrame: (callback: (frame: ServerFrame) => void) => {
-    ipcRenderer.on('xgw:frame', (_e, frame) => callback(frame))
+    const listener = (_e: Electron.IpcRendererEvent, frame: ServerFrame) => callback(frame)
+    ipcRenderer.on('xgw:frame', listener)
+    return () => ipcRenderer.removeListener('xgw:frame', listener)
   },
   onStatusChange: (callback: (status: string) => void) => {
     ipcRenderer.on('xgw:status', (_e, status) => callback(status))

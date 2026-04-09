@@ -1,7 +1,7 @@
 import { Logger } from '@lib/logast.js'
 import type { PayloadAction } from '@reduxjs/toolkit'
 import { Draft } from 'immer'
-import { Doc, DocState, LibraryDoc } from './types.js';
+import { CtxUsage, Doc, DocState, LibraryDoc } from './types.js';
 import { DocUtils } from './utils.js';
 
 // 一般用于新建/打开一个文档时，向 state 中添加一个 doc
@@ -54,6 +54,17 @@ const lockAgent = (state: Draft<DocState>, action: PayloadAction<{ docId: string
   }
 }
 
+// 按 conversationId 更新 ctxUsage（StatusBar 显示上下文用量）
+const setCtxUsageByConversationId = (state: Draft<DocState>, action: PayloadAction<{ conversationId: string, ctxUsage: CtxUsage }>) => {
+  const { conversationId, ctxUsage } = action.payload;
+  for (const doc of Object.values(state.docs)) {
+    if (doc.conversationId === conversationId) {
+      doc.ctxUsage = ctxUsage;
+      break;
+    }
+  }
+}
+
 export function buildReducers() {
   return {
     addDoc,
@@ -62,5 +73,6 @@ export function buildReducers() {
     setConversationId,
     setAgentId,
     lockAgent,
+    setCtxUsageByConversationId,
   }
 }

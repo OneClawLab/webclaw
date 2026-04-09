@@ -19,6 +19,7 @@ import { FrameState } from '@state/slices/ui/types.js'
 import { AppEvents, emitAppEvent, theAppEventBus } from '@event/app.js'
 import { theFocusManager } from '@view/index.js'
 import { OS } from '@lib/env.js'
+import { theFrameRouter } from '@renderer/client/FrameRouter.js'
 
 export function App(): React.JSX.Element {
   Logger.debug('App', 'Rendering App component');
@@ -79,6 +80,8 @@ export function App(): React.JSX.Element {
 
   useEffectOnce(() => {
     Logger.debug('App', 'Component mounted');
+    // 初始化全局 frame router（持久监听 xgw frames，处理 agent 主动推送）
+    theFrameRouter.init();
     return () => Logger.debug('App', 'Component unmounted');
   });
 

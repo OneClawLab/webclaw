@@ -103,7 +103,7 @@ declare global {
       closeConversation(conversationId: string): Promise<void>
       getStatus(): Promise<string>
       updateConfig(config: { host: string; port: number; channelId: string; peerId: string }): Promise<void>
-      onFrame(callback: (frame: import('@lib/webui-protocol/index.js').ServerFrame) => void): void
+      onFrame(callback: (frame: import('@lib/webui-protocol/index.js').ServerFrame) => void): () => void
       onStatusChange(callback: (status: string) => void): void
       onAgentsUpdate(callback: (agents: string[]) => void): void
       onError(callback: (msg: string) => void): void

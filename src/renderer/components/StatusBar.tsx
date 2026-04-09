@@ -9,6 +9,7 @@ import { agentActions } from '@state/slices/agent/slice.js';
 import { useTranslation } from '@lib/renderer/useTranslation.js';
 import { toast } from '@lib/renderer/dialog.js';
 import { dialog } from '@lib/renderer/dialog.js';
+import { useAppEventBus } from '@event/app.js';
 
 interface StatusBarElementProps {
   dynamic?: boolean;        // 表示此元素是动态元素，可点击鼠标有动作，因此要加亮显示
@@ -89,8 +90,23 @@ export const StatusBarEx = () => {
   const connectionStatus = useAppSelector((state) => state.connection.status);
   const prevConnectionStatus = useRef(connectionStatus);
 
-  // Progress message for ctx_usage / compact events
-  const [progressMessage, setProgressMessage] = useState('');
+  // ctx_usage from active doc (per-conversation, updated by ai.ts)
+  const activeDocCtxUsage = useAppSelector((state) => {
+    const tab = state.tab.tabs.find(t => t.id === state.tab.activeTabId);
+    if (!tab) return undefined;
+    return state.doc.docs[tab.docId]?.ctxUsage;
+  });
+
+  // compact state (global, not per-doc) — driven by FrameRouter via AppEventBus
+  const [compactMessage, setCompactMessage] = useState('');
+  useAppEventBus('xgw:compact_start', ({ reason }) => {
+    setCompactMessage(reason ? `压缩中 (${reason})…` : '压缩中…');
+  });
+  useAppEventBus('xgw:compact_end', ({ before_tokens, after_tokens }) => {
+    const toK = (n: number) => `${Math.round(n / 1000)}K`;
+    setCompactMessage(`压缩完成 ${toK(before_tokens)}→${toK(after_tokens)}`);
+    setTimeout(() => setCompactMessage(''), 5000);
+  });
 
   // Track if onFrame listener is already registered
   const frameListenerRegistered = useRef(false);
@@ -101,10 +117,10 @@ export const StatusBarEx = () => {
     connectionStatus === 'reconnecting' ? 'WifiOff' :
     'WifiOff';
   const connIconColor =
-    connectionStatus === 'authenticated' ? 'green' :
-    connectionStatus === 'reconnecting' ? 'orange' :
-    'red';
-  const connTooltip = `xgw: ${connectionStatus}`;
+    connectionStatus === 'authenticated' ? 'white' :
+    connectionStatus === 'reconnecting' ? '#FFD700' :
+    '#FF6B6B';
+  const connTooltip = `TheClaw Gateway Status: ${connectionStatus}`;
 
   // Listen to xgw status changes and agent updates
   useEffect(() => {
@@ -120,24 +136,8 @@ export const StatusBarEx = () => {
     });
   }, [dispatch]);
 
-  // Listen to xgw frames for progress events (register only once)
-  useEffect(() => {
-    const xgw = (window as any).xgw;
-    if (!xgw || frameListenerRegistered.current) return;
-    frameListenerRegistered.current = true;
-
-    xgw.onFrame((frame: any) => {
-      if (frame.type !== 'progress') return;
-      const kind: string = frame.kind ?? '';
-      if (kind === 'ctx_usage') {
-        setProgressMessage(frame.text ?? '');
-      } else if (kind === 'compact_start') {
-        setProgressMessage('正在压缩会话...');
-      } else if (kind === 'compact_end') {
-        setProgressMessage(frame.text ?? '压缩完成');
-      }
-    });
-  }, []);
+  // Listen to xgw frames for progress events — now handled by FrameRouter
+  // StatusBar only needs compact events, which come via AppEventBus above
 
   // Show toast when connection drops to disconnected
   useEffect(() => {
@@ -188,7 +188,20 @@ export const StatusBarEx = () => {
             dispatch(settingsActions.setProgressMode(nextMode));
           }
         },
-        ...(progressMessage ? [{ label: '', value: progressMessage, iconName: 'Loader' as LucideIconProps['name'], className: 'Grayed text-xs' }] : []),
+        ...(compactMessage ? [{ label: '', value: compactMessage, iconName: 'Loader' as LucideIconProps['name'], className: 'Grayed text-xs' }] : []),
+        ...(activeDocCtxUsage ? (() => {
+          const toK = (n: number) => `${Math.round(n / 1000)}K`;
+          const pct = Math.round(activeDocCtxUsage.pct);
+          const ctxColor = pct >= 90 ? '#FF6B6B' : pct >= 70 ? '#FFD700' : 'white';
+          return [{ 
+            label: '', 
+            value: `${pct}%`, 
+            iconName: 'BrainCircuit' as LucideIconProps['name'],
+            iconColor: ctxColor,
+            tooltip: `ctx: ${toK(activeDocCtxUsage.total_tokens)} / ${toK(activeDocCtxUsage.budget_tokens)}`,
+            className: 'Grayed text-xs',
+          }];
+        })() : []),
         { label: '', value: '', className: 'flex-1' },
         { label: 'ActiveTab= {', value: '', className: 'Grayed' },
         ...(activeTab

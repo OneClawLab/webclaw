@@ -12,6 +12,7 @@ import { isWhitespace } from '@lib/utils.js'
 import { preparePrompt } from '@ai/common/Prompt.js'
 import { toast } from '@lib/renderer/dialog.js'
 import { theDocManager } from '@editor/DocManager.js'
+import { docActions } from '@state/slices/doc/slice.js';
 
 ////////////////////////////////////////////////////////////////////////////////
 /// 用户按键盘 Mod+Enter 或 代码调 dispatchEditorCommand('editor/ai/ask') 最终都触发 handleCtrlEnter 函数
@@ -124,7 +125,13 @@ async function doAskAI(view: EditorView, userPrompt: string, promptStart: number
 
   // 取得用户 ID 和会话 ID
   const userId = appState.user.userId;
-  const conversationId = docId;
+  let conversationId = appState.doc.docs[docId]?.conversationId;
+  if (!conversationId) {
+    // 首次对话：用 docId 作为稳定的 conversationId 并持久化到 doc state
+    // xgw 的 ctx_usage 帧会携带此 conversationId，StatusBar 据此更新对应 doc 的 ctxUsage
+    conversationId = docId;
+    dispatch(docActions.setConversationId({ docId, conversationId }));
+  }
 
   // 把用户输入解析并预处理为 PreparedPrompt
   const prompt = await preparePrompt(userPrompt);
@@ -207,7 +214,7 @@ async function doAskAI(view: EditorView, userPrompt: string, promptStart: number
 
   // 调用 streamChat 流式获取回答并写入编辑器
   try {
-    if (!(await aiStatus())) {
+    if ((await aiStatus()) !== 'connected') {
       const outputWriter = writers.output as EditorSectionWriter;
       outputWriter.write(t('ai.hints.document.unconfigured', { link: '@kb/system/README.md' }));
     } else {

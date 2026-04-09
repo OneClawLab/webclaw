@@ -11,6 +11,7 @@ export interface Doc {
   conversationId?: string  // 关联的 conversation ID（用于 AI 聊天）
   agentId?: string         // 关联的 agent ID
   agentLocked?: boolean    // agent 是否已锁定（有聊天历史后不可更改）
+  ctxUsage?: CtxUsage      // 最近一次 ctx_usage 数据（按 conversation 更新）
 }
 
 // 属于知识库内的文档
@@ -43,6 +44,13 @@ export interface Docs {
 // docs 为当前所有已打开的文档集合
 export interface DocState {
   docs: Docs;
+}
+
+// ctx_usage 数据，来自 xgw progress 帧
+export interface CtxUsage {
+  total_tokens: number
+  budget_tokens: number
+  pct: number         // 0-100
 }
 
 export const initialState: DocState = {

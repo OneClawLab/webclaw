@@ -20,6 +20,10 @@ export interface AppEvents {
   'editor:created': { docId: string, tabId: string }
   'editor:destroyed': { docId: string, tabId: string }
 
+  /// xgw frame events (emitted by FrameRouter)
+  'xgw:compact_start': { reason: string }
+  'xgw:compact_end': { before_tokens: number; after_tokens: number }
+
   /// 对话框
 
   // 'dialog:opened': { id: string }
