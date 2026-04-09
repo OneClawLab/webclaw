@@ -288,9 +288,7 @@
       "title": "Document Commands",
       "commands": {
         "saveDocument": "Save Document",
-        "openDocument": "Open Document",
-        "updateHasChatMemoryStatus": "Update Chat Memory Status",
-        "updateHasChatMemoryStatusDesc": "Update chat memory status for specified document"
+        "openDocument": "Open Document"
       }
     },
     "default": {

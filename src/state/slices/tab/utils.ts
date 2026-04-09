@@ -22,7 +22,6 @@ export const TabUtils = {
       pinned: partial.pinned ?? false,
       closable: partial.closable ?? true,
       icon: partial.icon ?? 'NotepadText', // TODO Tab 缺省图标在这里
-      hasChatMemory: partial.hasChatMemory ?? false,
       meta: partial.meta ?? {},
     };
   },

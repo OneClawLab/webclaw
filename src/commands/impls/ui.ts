@@ -143,6 +143,7 @@ defineCommand({
   id: 'ui/side-panel/toggle',
   group: 'ui',
   title: k18('commands.ui.commands.toggleSidePanel'),
+  shortcut: 'Mod+Shift+T',
   run(args) {
     const dispatch = getAppDispatch();
     dispatch(uiActions.toggleSidePanelVisible());

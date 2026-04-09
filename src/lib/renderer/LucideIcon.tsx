@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { File, Menu, Command, PanelLeft, PanelRightOpen, BarChart, HelpCircle, ListTree, SquarePen, Maximize, Plus, Minus, X, Copy, Layers, Layers2, MessageCircleWarning, Square, Bold, Italic, FolderOpen, FolderClosed, Ellipsis, EllipsisVertical, CircleEllipsis, MessageCircleMore, ListCollapse, ChevronRight, ChevronDown, ArrowDownToLine, Save, Download, Pin, TableOfContents, TypeOutline, Underline, Strikethrough, Highlighter, Code, Link, Braces, IndentIncrease, IndentDecrease, Bug, Scissors, Eye, Target, Zap, CircleQuestionMark, Tally1, Tally2, Tally3, Tally4, RefreshCcw, ZoomIn, ZoomOut, RotateCw, FlaskConical, MessageCircle, Info, MessageCircleQuestionMark, MessageCircleCode, MessageCircleHeart, MessageCirclePlus, BrainCircuit, Brain, TriangleAlert, ChevronsLeftRightEllipsis, NotepadText, Binoculars, CopyMinus, CopyPlus, Dot, DotSquare, Grip, Heading, Heading1, Heading2, Heading3, Heading4, Heading5, Heading6, TreePine, Check, FilePlus, FolderPlus, Settings, Cog, Bell, ZapOff, ZapIcon, ChevronLeft, CheckCircle, CircleCheck, CircleAlert, Columns2, Library, ArrowLeftToLine, ArrowRightToLine, Activity, FileText, FileCode2, FileSpreadsheet, FileImage, FileAudio, FileVideo, FileArchive, FileLock2, Database, Terminal, Settings2, BookOpenText, CodeXml, Ampersands, Ampersand, Copyright, Ban, Clock, User, WifiOff, Wifi, Loader } from 'lucide-react'
+import { File, Menu, Command, PanelLeft, PanelRightOpen, BarChart, HelpCircle, ListTree, SquarePen, Maximize, Plus, Minus, X, Copy, Layers, Layers2, MessageCircleWarning, Square, Bold, Italic, FolderOpen, FolderClosed, Ellipsis, EllipsisVertical, CircleEllipsis, MessageCircleMore, ListCollapse, ChevronRight, ChevronDown, ArrowDownToLine, Save, Download, Pin, TableOfContents, TypeOutline, Underline, Strikethrough, Highlighter, Code, Link, Braces, IndentIncrease, IndentDecrease, Bug, Scissors, Eye, Target, Zap, CircleQuestionMark, Tally1, Tally2, Tally3, Tally4, RefreshCcw, ZoomIn, ZoomOut, RotateCw, FlaskConical, MessageCircle, Info, MessageCircleQuestionMark, MessageCircleCode, MessageCircleHeart, MessageCirclePlus, BrainCircuit, Brain, TriangleAlert, ChevronsLeftRightEllipsis, NotepadText, Binoculars, CopyMinus, CopyPlus, Dot, DotSquare, Grip, Heading, Heading1, Heading2, Heading3, Heading4, Heading5, Heading6, TreePine, Check, FilePlus, FolderPlus, Settings, Cog, Bell, ZapOff, ZapIcon, ChevronLeft, CheckCircle, CircleCheck, CircleAlert, Columns2, Library, ArrowLeftToLine, ArrowRightToLine, Activity, FileText, FileCode2, FileSpreadsheet, FileImage, FileAudio, FileVideo, FileArchive, FileLock2, Database, Terminal, Settings2, BookOpenText, CodeXml, Ampersands, Ampersand, Copyright, Ban, Clock, User, WifiOff, Wifi, Loader, MessagesSquare } from 'lucide-react'
 
 // 空图标：只占位，不显示任何内容
 const EmptyIcon: React.FC<LucideIconProps> = ({
@@ -22,6 +22,7 @@ const iconMap: Record<string, React.FC<LucideIconProps>> = {
   WifiOff,
   Wifi,
   Loader,
+  MessagesSquare,
 
   User,
   Info,

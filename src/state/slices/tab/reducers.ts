@@ -191,22 +191,6 @@ const markTabsDirtyForDoc = (state: Draft<TabState>, action: PayloadAction<{ doc
   }
 }
 
-// 为指定 docId 的所有 Tab 标记 hasChatMemory 状态
-const markTabsHasChatMemoryForDoc = (state: Draft<TabState>, action: PayloadAction<{ docId: string; hasChatMemory: boolean }>) => {
-  const tabs = state.tabs.filter(t => t.docId === action.payload.docId)
-  if (tabs.length === 0) {
-    Logger.warn('tabSlice', `No tabs found for hasChatMemory mark by docId: ${action.payload.docId}`);
-    return
-  }
-
-  for (const tab of tabs) {
-    if (tab.hasChatMemory === action.payload.hasChatMemory)
-      return
-    Logger.debug('tabSlice', `Marking tab hasChatMemory: ${tab.id} to ${action.payload.hasChatMemory}`);
-    tab.hasChatMemory = action.payload.hasChatMemory;
-  }
-}
-
 // 当某个 docId 变更(但文档没变)时，更新所有相关 Tab 的 docId
 const updateTabsDocId = (state: Draft<TabState>, action: PayloadAction<{ oldDocId: string; newDocId: string }>) => {
   const { oldDocId, newDocId } = action.payload;
@@ -364,7 +348,6 @@ export function buildReducers() {
     markTabEditing,
     markTabDirty,
     markTabsDirtyForDoc,
-    markTabsHasChatMemoryForDoc,
     setTabAutoScroll,
     updateTabsDocId,
     refreshTab,

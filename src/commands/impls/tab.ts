@@ -113,10 +113,6 @@ defineCommand<{ docId: string, switchTo: boolean, switchFocus: boolean, forceNew
     if (doc.conversationId && doc.agentId) {
       window.xgw.openConversation(doc.conversationId, doc.agentId).catch(() => {});
     }
-
-    // 对于库文档，更新该文档的聊天记忆状态
-    if (doc.origin === 'library')
-      dispatchCommand('document/updateHasChatMemoryStatus', { docId });
   }
 });
 

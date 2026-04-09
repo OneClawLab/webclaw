@@ -288,9 +288,7 @@
       "title": "文档命令",
       "commands": {
         "saveDocument": "保存文档",
-        "openDocument": "打开文档",
-        "updateHasChatMemoryStatus": "更新聊天记忆状态",
-        "updateHasChatMemoryStatusDesc": "为指定文档更新聊天记忆状态"
+        "openDocument": "打开文档"
       }
     },
     "default": {

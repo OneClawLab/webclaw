@@ -142,13 +142,6 @@ div.DraggingOver {
   white-space: nowrap;
 }
 
-/* 有 Chat Memory 的 TabHandle 标题样式 */
-.TabHandleTitle.HasChatMemory {
-  border-bottom: 1px solid rgba(137, 220, 235, 0.4);
-  color: #4fc1ff; /* 柔和亮蓝色 */
-}
-
-
 /* dirty 的 TabHandle 标题样式 */
 .TabHandleTitle.Dirty {
   font-weight: 500;

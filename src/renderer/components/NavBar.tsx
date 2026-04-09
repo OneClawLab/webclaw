@@ -36,6 +36,7 @@ export function NavBar(): React.JSX.Element {
   const layout = useAppSelector(state => state.ui.layout);
   const isOutlineViewVisible = layout.isOutlineViewVisible;
   const isStatusBarVisible = layout.isStatusBarVisible;
+  const isSidePanelVisible = layout.isSidePanelVisible;
 
   return (
     // 竖向布局，宽度固定，高度撑满父容器
@@ -51,6 +52,12 @@ export function NavBar(): React.JSX.Element {
         active={isStatusBarVisible}
         onClick={() => dispatchCommand('ui/status-bar/toggle', {})}
         title={t('commands.ui.commands.toggleStatusBar')}
+      />
+      <NavIconButton
+        iconName="MessagesSquare"
+        active={isSidePanelVisible}
+        onClick={() => dispatchCommand('ui/side-panel/toggle', {})}
+        title="Thread Browser"
       />
       <div className="grow" />
       {/* <TestMADM/> */}

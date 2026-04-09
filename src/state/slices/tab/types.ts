@@ -36,8 +36,6 @@ export interface Tab {
   _editing?: boolean          // 标记 对应的文档 正在被(AI)自动编辑中
   _highlight?: boolean        // 标记 tab 标题是否高亮
 
-  hasChatMemory: boolean      // 标记 该tab是否包含AI聊天记忆(只要在此Tab和AI聊过天就会有记忆)
-
   // 可选的扩展元数据字段
   // 目前支持:
   //   agentName: 关联的 agent 的名称

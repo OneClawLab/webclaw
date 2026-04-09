@@ -20,7 +20,7 @@ function RightActions(): React.JSX.Element {
 }
 
 function SidePanelBase(): React.JSX.Element {
-  const [activeTab, setActiveTab] = useState<'debug' | 'chat' | 'threads'>('debug')
+  const [activeTab, setActiveTab] = useState<'debug' | 'chat' | 'threads'>('threads')
 
   return (
     <aside id="SidePanel" className="flex flex-col h-full w-full min-h-0 min-w-0 bg-amber-50 border-l border-gray-200">

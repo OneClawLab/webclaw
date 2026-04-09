@@ -76,7 +76,6 @@ export function TabHandle({ tab, activeTabId }: Props): React.JSX.Element {
             className={clsx('mr-1', { editing: tab._editing })} />
           {/* 标题 TODO 最大长度 */}
           <span className={clsx('TabHandleTitle', 
-            tab.hasChatMemory && 'HasChatMemory', 
             tab._dirty && 'Dirty', 
             (tab.status.toString() === 'outdated') && 'Outdated', 
             (tab.status.toString() === 'deleted') && 'Deleted',

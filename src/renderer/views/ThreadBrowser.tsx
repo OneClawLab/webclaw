@@ -139,7 +139,7 @@ export function ThreadBrowser(): React.JSX.Element {
   return (
     <div className="flex h-full min-h-0">
       {/* Left: thread list */}
-      <div className="w-56 flex flex-col border-r border-gray-200 min-h-0 flex-shrink-0">
+      <div className="w-56 flex flex-col border-r border-gray-200 min-h-0 shrink-0">
         {/* Agent filter */}
         <div className="p-2 border-b border-gray-200">
           <select
