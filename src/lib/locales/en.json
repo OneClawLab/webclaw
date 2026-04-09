@@ -1,0 +1,400 @@
+{
+  "ui": {
+    "welcome": {
+      "title": "Welcome to WebClaw!",
+      "subtitle": "Start your journey"
+    },
+    "common": {
+      "moreActions": "More Actions",
+      "search": "Search...",
+      "filterTree": "Filter tree view..."
+    },
+    "menus": {
+      "app": {
+        "library": {
+          "title": "Library",
+          "createLibrary": "Create Library...",
+          "createLibraryTooltip": "Create new library and add to current workspace",
+          "createLibraryShortcut": "Mod+Alt+N",
+          "addLibrary": "Add Existing Library...",
+          "addLibraryTooltip": "Add existing library to current workspace",
+          "addLibraryShortcut": "Mod+Alt+O",
+          "saveLibrary": "Save Current Library",
+          "saveLibraryTooltip": "Save changes to current library",
+          "saveLibraryShortcut": "Mod+Alt+S",
+          "removeLibrary": "Remove Library",
+          "removeLibraryTooltip": "Remove library from current workspace",
+          "removeLibraryShortcut": "Mod+Alt+W",
+          "quit": "Quit",
+          "quitTooltip": "Quit application",
+          "quitShortcut": "Alt+F4"
+        },
+        "document": {
+          "title": "Document",
+          "newDocument": "New Document",
+          "newDocumentTooltip": "Create new document in current library",
+          "newDocumentShortcut": "Mod+N",
+          "openDocument": "Open Document...",
+          "openDocumentTooltip": "Open document from current library",
+          "openDocumentShortcut": "Mod+O",
+          "saveDocument": "Save Document",
+          "saveDocumentTooltip": "Save changes to current document",
+          "saveDocumentShortcut": "Mod+S",
+          "closeDocument": "Close Document",
+          "closeDocumentTooltip": "Close current document",
+          "closeDocumentShortcut": "Mod+W"
+        }
+      },
+      "context": {
+        "tree": {
+          "open": "Open",
+          "openTooltip": "Open selected document or folder",
+          "rename": "Rename",
+          "renameTooltip": "Rename selected node",
+          "renameErrorDuplicate": "Item with same name already exists at this level",
+          "delete": "Delete",
+          "deleteTooltip": "Delete selected node",
+          "properties": "Properties",
+          "propertiesTooltip": "View properties of selected node",
+          "newFile": "New Document",
+          "newFileTooltip": "Create new document in selected folder",
+          "newFolder": "New Folder",
+          "newFolderTooltip": "Create new folder in selected folder",
+          "refresh": "Refresh",
+          "openInNewTab": "Open in New Tab",
+          "showInExplorer": "Show in Explorer",
+          "removeLibrary": "Remove Library",
+          "moveLibraryUp": "Move Library Up",
+          "moveLibraryDown": "Move Library Down"
+        },
+        "tab": {
+          "close": "Close",
+          "closeOthers": "Close Others",
+          "closeAll": "Close All",
+          "refresh": "Refresh",
+          "pin": "Pin",
+          "unpin": "Unpin",
+          "showInExplorer": "Show in Explorer"
+        }
+      }
+    },
+    "components": {
+      "tabHandle": {
+        "unpin": "Unpin",
+        "close": "Close",
+        "closeShortcut": "Mod+W"
+      },
+      "treeView": {
+        "rightActions": {
+          "newFile": "New Document",
+          "newFolder": "New Folder",
+          "refresh": "Refresh Library",
+          "collapseOneLevel": "Collapse One Level"
+        }
+      },
+      "navbar": {
+        "test": "Test",
+        "settings": "Settings"
+      },
+      "notifications": {
+        "updateReadyTitle": "Update Ready",
+        "updateReadyMessage": "An application update is available. Install now?\n\n{{version}}-{{releaseName}}\n{{releaseDate}}\n\n{{releaseNotes}}",
+        "updateReadyActionLabel": "Update Now"
+      }
+    },
+    "dialogs": {
+      "confirm": {
+        "title": "Please Confirm Your Action",
+        "removeLibraryMessage": "Are you sure you want to remove library \"{{name}}\" from current workspace? This will not delete files on disk.",
+        "confirmButton": "Confirm",
+        "cancelButton": "Cancel"
+      },
+      "alert": {
+        "title": "Message",
+        "okButton": "OK"
+      }
+    },
+    "notifications": {
+      "updateReady": {
+        "title": "Update Ready",
+        "message": "An application update is available. Install now?\n\n{{version}}-{{releaseName}}\n{{releaseDate}}\n\n{{releaseNotes}}",
+        "actionLabel": "Update Now"
+      }
+    }
+  },
+  "commands": {
+    "mainWindow": {
+      "title": "Main Window Commands",
+      "commands": {
+        "minimize": "Minimize Main Window",
+        "maximize": "Maximize Main Window",
+        "close": "Close Main Window",
+        "closeConfirmTitle": "Close Application Confirmation",
+        "closeConfirmMessage": "You have {{count}} unsaved documents. Are you sure you want to close the application?",
+        "closeConfirmSaveButton": "Save All",
+        "closeConfirmDiscardButton": "Discard All",
+        "closeConfirmCancelButton": "Cancel"
+      }
+    },
+    "ui": {
+      "title": "UI Commands",
+      "commands": {
+        "settings": "Settings",
+        "moreTools": "More Tools",
+        "export": "Export",
+        "developerTools": "Developer Tools",
+        "commandPalette": "Command Palette",
+        "checkForUpdates": "Check for Updates",
+        "showCommandPalette": "Show Command Palette",
+        "hideCommandPalette": "Hide Command Palette",
+        "toggleCommandPalette": "Toggle Command Palette Visibility",
+        "toggleAppMenu": "Toggle App Menu Visibility",
+        "toggleNavBar": "Toggle Navigation Bar Visibility",
+        "toggleOutlineView": "Toggle Outline View Visibility",
+        "toggleTabArea": "Toggle Tab Area Visibility",
+        "toggleSidePanel": "Toggle Side Panel Visibility",
+        "toggleStatusBar": "Toggle Status Bar Visibility",
+        "hotkeyTitle": "Handle Hotkey Input from Main Process",
+        "toastTitle": "Show Message Notification",
+        "notificationTitle": "Show System Notification",
+        "renameTitle": "Start Renaming Current Selected Node",
+        "deleteTitle": "Delete Current Selected Node",
+        "refreshTitle": "Refresh Current Tab Content"
+      }
+    },
+    "workspace": {
+      "title": "Workspace Commands",
+      "commands": {
+        "createLibrary": "Create New Library",
+        "createLibraryDesc": "Create new library and add to current workspace",
+        "addLibrary": "Add Existing Library",
+        "addLibraryDesc": "Add existing library to current workspace",
+        "removeLibrary": "Remove Library",
+        "removeLibraryDesc": "Remove specified library from current workspace",
+        "saveLibrary": "Save Library",
+        "saveLibraryDesc": "Save changes to specified library",
+        "refreshLibrary": "Refresh Library and Tree View",
+        "refreshLibraryDesc": "Refresh specified library and its corresponding tree view",
+        "refreshAllLibraries": "Refresh All Libraries",
+        "refreshAllLibrariesDesc": "Refresh all libraries and their corresponding tree views in current workspace",
+        "moveLibraryPosition": "Adjust Library Position Up/Down",
+        "moveLibraryPositionDesc": "Adjust position of specified library up or down in workspace"
+      }
+    },
+    "tree": {
+      "title": "Tree View Commands",
+      "commands": {
+        "toggleHeaderExpand": "Toggle Entire Tree Expand State",
+        "toggleNodeExpand": "Toggle Specified Node Expand State",
+        "collapseOneLevel": "Collapse Tree Nodes One Level",
+        "setFilter": "Set Filter for Tree View",
+        "selectNode": "Select Specified Node",
+        "syncNodeToActiveTab": "Sync Tree Node to Active Tab Document",
+        "startRenameNode": "Start Renaming Specified Node",
+        "cancelRenameNode": "Cancel Renaming Specified Node",
+        "commitRenameNode": "Commit Renaming Specified Node",
+        "startNewNode": "Start Creating New Child Node Under Specified Node",
+        "cancelNewNode": "Cancel Creating New Node",
+        "commitNewNode": "Commit Creating New Node",
+        "deleteNode": "Delete Specified Node",
+        "navigateNext": "Navigate to Next Node",
+        "navigatePrev": "Navigate to Previous Node",
+        "navigateFirst": "Navigate to First Node",
+        "navigateLast": "Navigate to Last Node",
+        "navigateLeft": "Navigate Left (Collapse/Parent Node)",
+        "navigateRight": "Navigate Right (Expand/Child Node)",
+        "activateNode": "Activate Specified Node or Current Focused Node"
+      }
+    },
+    "tab": {
+      "title": "Tab Commands",
+      "commands": {
+        "newTab": "New Tab",
+        "openTab": "Open Tab",
+        "saveTab": "Save Tab",
+        "refreshTab": "Refresh Tab",
+        "closeTab": "Close Tab",
+        "closeOthers": "Close Other Tabs",
+        "closeAll": "Close All Tabs",
+        "pinTab": "Pin/Unpin Tab",
+        "autoScroll": "Set Tab Auto Scroll",
+        "switchTab": "Switch Tab",
+        "nextRecent": "Switch to Next Recently Used Tab",
+        "prevRecent": "Switch to Previous Recently Used Tab",
+        "nextPosition": "Switch to Next Tab on Right",
+        "prevPosition": "Switch to Previous Tab on Left",
+        "updateStatus": "Update Tab Status",
+        "dumpContent": "Export Content in New Tab",
+        "dumpContentDesc": "Display specified content in new tab",
+        "openEiduxLink": "Open Link",
+        "openEiduxLinkDesc": "Open specified link in new tab"
+      }
+    },
+    "editor": {
+      "title": "Editor Commands",
+      "commands": {
+        "refresh": "Refresh Editor",
+        "refreshDesc": "Refresh current tab editor content",
+        "indentMore": "Increase Indent",
+        "indentMoreDesc": "Increase indent level of selected text",
+        "indentLess": "Decrease Indent",
+        "indentLessDesc": "Decrease indent level of selected text",
+        "expandMore": "Increase Visible Level",
+        "expandMoreDesc": "Increase visible level of selected text",
+        "collapseMore": "Decrease Visible Level",
+        "collapseMoreDesc": "Decrease visible level of selected text",
+        "toggleBold": "Toggle Bold",
+        "toggleBoldDesc": "Add or remove bold formatting for selected text",
+        "toggleItalic": "Toggle Italic",
+        "toggleItalicDesc": "Add or remove italic formatting for selected text",
+        "toggleStrikethrough": "Toggle Strikethrough",
+        "toggleStrikethroughDesc": "Add or remove strikethrough formatting for selected text",
+        "toggleUnderline": "Toggle Underline",
+        "toggleUnderlineDesc": "Add or remove underline formatting for selected text",
+        "toggleHighlight": "Toggle Highlight",
+        "toggleHighlightDesc": "Add or remove highlight formatting for selected text",
+        "toggleInlineCode": "Toggle Inline Code",
+        "toggleInlineCodeDesc": "Add or remove inline code formatting for selected text",
+        "toggleCodeBlock": "Toggle Code Block",
+        "toggleCodeBlockDesc": "Add or remove code block formatting for selected text"
+      }
+    },
+    "system": {
+      "title": "System Commands",
+      "commands": {
+        "showInExplorer": "Show in Explorer",
+        "showInExplorerDesc": "Show specified file in system file explorer",
+        "showInExplorerErrorUnsaved": "Cannot show unsaved document",
+        "openInBrowser": "Open in Browser",
+        "openInBrowserDesc": "Open specified URL in system default browser",
+        "updateReady": "Update Ready"
+      }
+    },
+    "settings": {
+      "title": "Settings Commands",
+      "commands": {
+        "showStaticMemory": "Show Static Chat Memory in New Tab"
+      }
+    },
+    "recorder": {
+      "title": "Recorder Commands",
+      "commands": {
+        "exportAppState": "Export App State",
+        "exportAppStateInMain": "Export App State in Main Process",
+        "exportVectordbStats": "Export Vectordb Stats"
+      }
+    },
+    "document": {
+      "title": "Document Commands",
+      "commands": {
+        "saveDocument": "Save Document",
+        "openDocument": "Open Document",
+        "updateHasChatMemoryStatus": "Update Chat Memory Status",
+        "updateHasChatMemoryStatusDesc": "Update chat memory status for specified document"
+      }
+    },
+    "default": {
+      "title": "Default Commands",
+      "commands": {
+        "echo": "Echo Message"
+      }
+    },
+    "runtime": {
+      "title": "Runtime Commands",
+      "commands": {}
+    },
+    "ai": {
+      "title": "AI Commands",
+      "commands": {
+        "askAI": "Ask AI or Input Command...",
+        "askAIDesc": "Use selected content as prompt to ask AI and stream response into editor"
+      }
+    }
+  },
+  "ai": {
+    "commands": {
+      "askAi": "Ask AI or Input Command...",
+      "askAiDesc": "Use selected content as prompt to ask AI and stream response into editor"
+    },
+    "hints": {
+      "document": {
+        "unconfigured": "AI functionality is not properly configured, service is currently unavailable. Please read {{link}} to resolve."
+      },
+      "toast": {
+        "emptyDocBefore": "Press again to use entire document content as question to ask AI.",
+        "emptyDocAfter": "Please enter content to ask, then press again to ask AI.",
+        "emptyDocMiddle": "To ask AI, press {{ModEnter}} at the beginning or end of document.",
+        "alreadyQuoted": "Your selected content has been quoted. You can continue adding content, or press again to ask AI.",
+        "missingCustomPrompt": "`custom` agent requires adding SYSTEM PROMPT at document beginning, see `HowTo.md` for details."
+      },
+      "inline": {
+        "emptyDocStart": "Press {{ModEnter}} to insert AI question section here",
+        "noPromptYet": "Press / for quick commands, press @ to add more information",
+        "hasPrompt": "Press {{ModEnter}} to send question",
+        "insertNewQuestion": "Press {{ModEnter}} to insert new AI question section",
+        "quoteSelection": "Press {{ModEnter}} to quote selected content to new AI question section"
+      }
+    },
+    "errors": {
+      "unconfigured": "AI functionality is not properly configured, service is currently unavailable.",
+      "serviceError": "AI service encountered an error, please check your configuration.",
+      "readyWithAgent": "AI functionality is working, current agent: {{agent}}",
+      "aiTestOk": "AI functionality is working, test passed!",
+      "aiUnconfigured": "AI functionality is not properly configured, service is currently unavailable.",
+      "aiTestFail": "AI functionality test failed, please check your configuration or network connection.",
+      "failToResolveLink": "Failed to resolve link: {{link}}",
+      "fileNotFoundForLink": "File not found: {{link}} -> {{realpath}}",
+      "failToOpenDirectory": "Failed to open directory: {{link}} -> {{realpath}}"
+    }
+  },
+  "views": {
+    "debugWindow": {
+      "title": "Debug Window",
+      "empty": "empty"
+    },
+    "chatPanel": {
+      "title": "AI Chat",
+      "greeting": "AI: How can I help you?",
+      "inputPlaceholder": "Type message..."
+    },
+    "commandPalette": {
+      "searchPlaceholder": "Search command…"
+    }
+  },
+  "defaults": {
+    "newFolder": "New Folder",
+    "untitled": "Untitled",
+    "untitledDocument": "Untitled Document",
+    "untitledMd": "untitled.md"
+  },
+  "errors": {
+    "validation": {
+      "nameCannotBeEmpty": "Name cannot be empty",
+      "nameContainsInvalidChars": "Name contains invalid characters: / \\ : * ? \" < > |",
+      "nameIsReserved": "Name \"{{name}}\" is a reserved name",
+      "libraryPathEmpty": "Library path is empty for library ID: {{libId}}"
+    },
+    "general": {
+      "reactComponentError": "React Component Error!",
+      "deleteConfirmationTitle": "Delete Confirmation",
+      "deleteConfirmationMessage": "Are you sure to delete {{count}} files/folders? This action cannot be undone.",
+      "deleteButton": "Delete",
+      "cancelButton": "Cancel"
+    },
+    "context": {
+      "logViewProviderNotFound": "LogViewProvider not found"
+    }
+  },
+  "hints": {
+    "tab.save": "press {{shortcut}} to save the document",
+    "workspace.name": "used to distinguish between different workspaces"
+  },
+  "settings": {
+    "language": {
+      "title": "Language",
+      "auto": "Follow System",
+      "en": "English", 
+      "zh": "中文"
+    }
+  }
+}

@@ -1,0 +1,64 @@
+/**
+ * 用于表格内的 inline marks 样式, 如加粗、斜体、删除线、标记、链接、行内代码等.
+ * 要和 doc.ts 里的 HighlightStyle 保持一致，以便表格内外的 inline marks 样式一致.
+ * 参见: tableParser.ts
+ */
+
+/* 表格容器样式 */
+.cm-md-table-wrapper {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: none;
+  overflow: visible;
+  display: block;
+  box-sizing: border-box;
+  position: relative;
+  background-color: var(--vscode-editor-background, transparent);
+}
+
+/* 表格基础样式 */
+.cm-md-table {
+  margin: 0;
+  padding: 0;
+  border: none;
+  width: 100%;
+  box-sizing: border-box;
+  table-layout: auto;
+}
+
+/* 内联标记样式 */
+.cm-md-table-wrapper .cm-md-im-strong {
+  font-weight: bold;
+}
+
+.cm-md-table-wrapper .cm-md-im-em {
+  font-style: italic;
+}
+
+.cm-md-table-wrapper .cm-md-im-del {
+  text-decoration: line-through;
+}
+
+/* hlt.highlight */
+.cm-md-table-wrapper .cm-md-im-mark {
+  background-color: yellow;
+  color: black;
+}
+
+/* t.monospace: color '#0070c1' (inline code) */
+.cm-md-table-wrapper .cm-md-im-code {
+  color: #0070c1;
+  /* optional: make it code-ish without breaking theme */
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 0.95em;
+}
+
+/* t.link */
+.cm-md-table-wrapper .cm-md-im-link {
+  color: #4078f2;
+  text-decoration: underline;
+}
+.cm-md-table-wrapper .cm-md-im-link:visited {
+  color: #4078f2;
+}

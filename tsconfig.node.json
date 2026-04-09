@@ -1,0 +1,40 @@
+{
+  "extends": "@electron-toolkit/tsconfig/tsconfig.node.json",
+  // TypeScript 规则是：exclude 会排除 include 中已经包含的文件
+  // 详见：https://www.typescriptlang.org/tsconfig 
+  "include": [
+    "electron.vite.config.*",
+    "src/types/**/*.d.ts",
+
+    "src/**/node/**/*",       // 所有层级的 node 目录 是 node 专用代码
+    "src/http/**/*",          // 整个 http 目录 是 node 专用代码
+
+    "src/ai/**/*",            // ai 里有 node 代码
+    "src/lib/**/*",           // lib 里也有 node 代码
+  ],
+  "exclude": [
+    "src/**/renderer/**/*",   // 所有层级的 renderer 目录 是 web 专用代码
+  ],
+  "compilerOptions": {
+    "target": "es2022",
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "sourceMap": false,
+    "composite": true,
+    "types": ["electron-vite/node"],
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "baseUrl": ".",
+    "paths": {
+      "@types/*": ["src/types/*"],
+      "@node/*": ["src/node/*"],
+      "@http/*": ["src/http/*"],
+      "@ai/*": ["src/ai/*"],
+      "@lib/*": ["src/lib/*"],
+    }
+  }
+}

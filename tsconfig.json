@@ -1,0 +1,42 @@
+{
+  "files": [],
+  "include": [
+    "src/**/*",
+    "src/types/**/*.d.ts"
+  ],  
+  "references": [
+    { "path": "./tsconfig.node.json" },
+    { "path": "./tsconfig.web.json" }
+  ],
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "jsxImportSource": "react",
+    "strict": true,
+    "sourceMap": false,
+    "removeComments": true,
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@ai/*": ["src/ai/*"],
+      "@node/*": ["src/node/*"],
+      "@renderer/*": ["src/renderer/*"],
+      "@state/*": ["src/state/*"],
+      "@editor/*": ["src/editor/*"],
+      "@commands/*": ["src/commands/*"],
+      "@hotkeys/*": ["src/hotkeys/*"],
+      "@library/*": ["src/library/*"],
+      "@event/*": ["src/event/*"],
+      "@view/*": ["src/view/*"],
+      "@hack/*": ["src/hack/*"],
+      "@http/*": ["src/http/*"],
+      "@lib/*": ["src/lib/*"],
+      "@types/*": ["src/types/*"],
+      "@/*": ["src/*"]
+    }
+  }
+}

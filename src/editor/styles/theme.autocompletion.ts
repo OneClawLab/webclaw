@@ -1,0 +1,124 @@
+import { EditorView } from "@codemirror/view"
+
+export const autocompletionTheme = EditorView.theme({
+  ".cm-tooltip.cm-tooltip-autocomplete": {
+    "& > ul": {
+      fontFamily: "monospace",
+      whiteSpace: "nowrap",
+      overflow: "hidden auto",
+      maxWidth_fallback: "700px",
+      maxWidth: "min(700px, 95vw)",
+      minWidth: "250px",
+      maxHeight: "20em",    // 最大高度更大一些
+      height: "100%",
+      listStyle: "none",
+      margin: 0,
+      padding: 0,
+      "& > completion-section": {  // 这是 section
+        lineHeight: 1.6,
+        //padding: "1px 3px",
+        display: "list-item",
+        borderBottom: "1px solid silver",
+        paddingLeft: "0.5em",
+        opacity: 0.7,
+        color: 'blue',
+        fontSize: '1.1em',
+        fontWeight: 'bold',
+      },
+      "& > li": {                  // 这是 section 内部的 item
+        lineHeight: 1.2,
+        padding: "1px 3px",
+        overflowX: "hidden",
+        textOverflow: "ellipsis",
+        cursor: "pointer"
+      },
+    }
+  },
+  ".cm-tooltip-autocomplete ul li[aria-selected]": {
+    boxShadow: "0 0 0 1px #0060C0",
+    backgroundColor: '#eaeadd',
+    color: "black",
+  },
+  ".cm-tooltip-autocomplete-disabled ul li[aria-selected]": {
+    background: "#777",
+  },
+  ".cm-completionListIncompleteTop:before, .cm-completionListIncompleteBottom:after": {
+    content: '"···"',
+    opacity: 0.5,
+    display: "block",
+    textAlign: "center"
+  },
+  ".cm-tooltip.cm-completionInfo": {  // active item 的 details 弹出框
+    position: "absolute",
+    padding: "3px 9px",
+    width: "max-content",
+    maxWidth: `${400 /* Info.Width */}px`,
+    boxSizing: "border-box",
+    boxShadow: "0 0 0 1px #0060C0",
+    backgroundColor: '#eaeadd',
+    whiteSpace: "pre-line"            // 按实际(无需转义符号)换行
+  },
+  ".cm-completionInfo.cm-completionInfo-left": { right: "100%" },
+  ".cm-completionInfo.cm-completionInfo-right": { left: "100%" },
+  ".cm-completionInfo.cm-completionInfo-left-narrow": { right: `${30 /* Info.Margin */}px` },
+  ".cm-completionInfo.cm-completionInfo-right-narrow": { left: `${30 /* Info.Margin */}px` },
+  ".cm-snippetField": { backgroundColor: "#00000022" },
+  ".cm-snippetFieldPosition": {
+    verticalAlign: "text-top",
+    width: 0,
+    height: "1.15em",
+    display: "inline-block",
+    margin: "0 -0.7px -.7em",
+    borderLeft: "1.4px dotted #888"
+  },
+  ".cm-completionMatchedText": {
+    textDecoration: "underline"
+  },
+  ".cm-completionDetail": {
+    marginLeft: "1em",
+    fontWeight: '300',        // detail 信息显示的 更细一些
+    fontStyle: "italic"
+  },
+  ".cm-completionIcon": {
+    fontSize: "90%",
+    width: ".8em",
+    display: "inline-block",
+    textAlign: "center",
+    paddingRight: ".6em",
+    opacity: "0.6",
+    boxSizing: "content-box"
+  },
+  ".cm-completionIcon-function, .cm-completionIcon-method": {
+      "&:after": { content: "'ƒ'" }
+  },
+  ".cm-completionIcon-class": {
+      "&:after": { content: "'○'" }
+  },
+  ".cm-completionIcon-interface": {
+      "&:after": { content: "'◌'" }
+  },
+  ".cm-completionIcon-variable": {
+      "&:after": { content: "'𝑥'" }
+  },
+  ".cm-completionIcon-constant": {
+      "&:after": { content: "'𝐶'" }
+  },
+  ".cm-completionIcon-type": {
+      "&:after": { content: "'𝑡'" }
+  },
+  ".cm-completionIcon-enum": {
+      "&:after": { content: "'∪'" }
+  },
+  ".cm-completionIcon-property": {
+      "&:after": { content: "'□'" }
+  },
+  ".cm-completionIcon-keyword": {
+      "&:after": { content: "'🔑\uFE0E'" } // Disable emoji rendering
+  },
+  ".cm-completionIcon-namespace": {
+      "&:after": { content: "'▢'" }
+  },
+  ".cm-completionIcon-text": {
+      "&:after": { content: "'abc'", fontSize: "50%", verticalAlign: "middle" }
+  }
+}, { dark: false })

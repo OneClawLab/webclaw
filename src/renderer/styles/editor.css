@@ -1,0 +1,46 @@
+.ChatEditor {
+  background-color: white; /* #FAFAFA; */
+}
+
+#EditorToolbar {
+  background-color: white; /* #F3F3F3; */
+  border-bottom: 1px solid #E5E5E5;
+}
+
+.EditorCommandButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 24px; /* 统一按钮高度 */
+  padding: 0 4px; /* 左右内边距，确保内容不贴边 */
+  border-radius: 1px; /* 添加圆角，让按钮更美观 */
+  font-size: 14px; /* 调整字体大小 */
+  line-height: 1; /* 确保文字垂直居中 */
+  transition: background-color 0.2s, color 0.2s; /* 添加过渡效果 */
+}
+
+.EditorCommandButton:hover {
+  background-color: #E8E8E8; /* Hover 时的背景色 */
+  color: black; /* Hover 时的文字颜色 */
+  cursor: pointer; /* 鼠标悬停时显示手型指针 */
+}
+
+.EditorCommandButton:active {
+  background-color: #D6D6D6; /* Active 时的背景色 */
+}
+
+.EditorCommandButton:disabled {
+  opacity: 0.5; /* 禁用状态下的透明度 */
+  cursor: not-allowed; /* 禁用状态下的鼠标样式 */
+}
+
+.EditorCommandButton:disabled:hover {
+  background-color: transparent; /* 禁用状态下 Hover 无效 */
+  color: gray;
+}
+
+/* 如果按钮有 active 状态，添加一个边框或阴影效果 */
+.EditorCommandButton.active {
+  border: 1px solid #007ACC; /* Active 状态的边框颜色 */
+  box-shadow: 0 0 4px rgba(0, 122, 204, 0.5); /* Active 状态的阴影效果 */
+}

@@ -1,0 +1,63 @@
+/* 快速调试样式 */
+
+.debug {
+  border: 1px dotted red;
+  margin: 4px;
+  padding: 4px;
+}
+
+.debug-1 {
+  border: 1px dashed blue;
+  background-color: rgba(0, 0, 255, 0.07);
+  margin: 4px;
+  padding: 4px;
+}
+
+.debug-2 {
+  border: 1px dotted green;
+  background-color: rgba(0, 255, 0, 0.07);
+  margin: 4px;
+  padding: 4px;
+}
+
+.debug-3 {
+  border: 1px solid orange;
+  background-color: rgba(255, 165, 0, 0.07);
+  margin: 4px;
+  padding: 4px;
+}
+
+.debug-4 {
+  border: 1px dashed purple;
+  background-color: rgba(128, 0, 128, 0.07);
+  margin: 4px;
+  padding: 4px;
+}
+
+.debug-5 {
+  border: 1px dotted teal;
+  background-color: rgba(0, 128, 128, 0.07);
+  margin: 4px;
+  padding: 4px;
+}
+
+.debug-6 {
+  border: 1px solid brown;
+  background-color: rgba(165, 42, 42, 0.07);
+  margin: 4px;
+  padding: 4px;
+}
+
+.debug-7 {
+  border: 1px dashed gray;
+  background-color: rgba(128, 128, 128, 0.07);
+  margin: 4px;
+  padding: 4px;
+}
+
+.debug-8 {
+  border: 1px dotted pink;
+  background-color: rgba(255, 192, 203, 0.07);
+  margin: 4px;
+  padding: 4px;
+}

@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>WebClaw: WebUI Client of TheClaw.</title>
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <!-- TODO 切换到真后台时 connect-src 里的的域名要同步更新 -->
+    <!-- 3000 是 fastify端口， 1234 是LM Studio端口 --> 
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="connect-src 'self' http://127.0.0.1:3000 http://localhost:3000; default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: http: https:"
+    />
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/main.tsx"></script>
+  </body>
+</html>

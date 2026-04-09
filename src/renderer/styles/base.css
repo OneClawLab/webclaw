@@ -1,0 +1,177 @@
+@import "@radix-ui/colors/gray.css";
+@import "@radix-ui/colors/blue.css";
+@import "@radix-ui/colors/green.css";
+@import "@radix-ui/colors/red.css";
+@import "@radix-ui/colors/gray-dark.css";
+@import "@radix-ui/colors/blue-dark.css";
+@import "@radix-ui/colors/green-dark.css";
+@import "@radix-ui/colors/red-dark.css";
+
+:root {
+  --ev-c-white: #ffffff;                  /* 纯白 */
+  --ev-c-white-soft: #f8f8f8;             /* 柔和白 */
+  --ev-c-white-mute: #f2f2f2;             /* 哑光白 */
+  
+  --ev-c-black: #1b1b1f;                  /* 深黑（带蓝调） */
+  --ev-c-black-soft: #222222;             /* 柔和黑 */
+  --ev-c-black-mute: #282828;             /* 哑光黑 */
+  
+  --ev-c-gray-1: #515c67;                 /* 中灰1 */
+  --ev-c-gray-2: #414853;                 /* 中灰2 */
+  --ev-c-gray-3: #32363f;                 /* 深灰 */
+  
+  --ev-c-text-1: #111111;                 /* 最深文字（接近纯黑） */
+  --ev-c-text-2: #333333;                 /* 次级文字 */
+  --ev-c-text-3: #666666;                 /* 辅助文字 */
+
+  --ev-button-alt-border: transparent;      /* 透明边框 */
+  --ev-button-alt-text: var(--ev-c-text-1); /* 文字使用最深黑色 */
+  --ev-button-alt-bg: var(--ev-c-gray-3);   /* 深灰背景 */
+  
+  --ev-button-alt-hover-border: transparent;
+  --ev-button-alt-hover-text: var(--ev-c-text-1);
+  --ev-button-alt-hover-bg: var(--ev-c-gray-2); /* 悬停时稍亮 */
+}
+
+:root {
+  --color-background: #fff;               /* 纯白背景 */
+  --color-background-soft: #f8f8f8;       /* 次级背景 */
+  --color-background-mute: #f2f2f2;       /* 三级背景 */
+  
+  --color-text: var(--ev-c-text-1);       /* 文字颜色关联到最深黑 */
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-weight: normal;
+}
+
+ul {
+  list-style: none;
+}
+
+body {
+  min-height: 100vh;
+  color: var(--color-text);
+  background: var(--color-background);
+  line-height: 1.6;
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    'Fira Sans',
+    'Droid Sans',
+    'Helvetica Neue',
+    sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+@import "tailwindcss";
+
+/* 保持body背景和居中样式 */
+body {
+  display: flex;
+  align-items: stretch; /* 填满高度 */
+  justify-content: stretch; /* 填满宽度 */
+  background-size: cover;
+  user-select: none;
+}
+
+/* 让#root填满父容器 */
+#root {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: stretch;
+}
+
+@keyframes toast-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-toast-in {
+  animation: toast-in 0.3s ease-out;
+}
+
+.lucide {
+  stroke-width: 1.5 !important;
+}
+
+/* 滚动条渐隐效果 */
+.scrollbar-fade {
+  /* WebKit 浏览器滚动条样式 */
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
+
+.scrollbar-fade::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.scrollbar-fade::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar-fade::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.scrollbar-fade::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+/* 当容器获得焦点或悬停时显示滚动条 */
+.scrollbar-fade:focus::-webkit-scrollbar-thumb,
+.scrollbar-fade:hover::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.scrollbar-fade:focus::-webkit-scrollbar-thumb:hover,
+.scrollbar-fade:hover::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Firefox 滚动条样式 */
+.scrollbar-fade:focus,
+.scrollbar-fade:hover {
+  scrollbar-color: rgba(0, 0, 0, 0.3) transparent;
+}
+
+/* 当父容器获得焦点时，子元素的滚动条也显示 */
+.scrollbar-fade-parent:focus .scrollbar-fade::-webkit-scrollbar-thumb,
+.scrollbar-fade-parent:hover .scrollbar-fade::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.scrollbar-fade-parent:focus .scrollbar-fade::-webkit-scrollbar-thumb:hover,
+.scrollbar-fade-parent:hover .scrollbar-fade::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.scrollbar-fade-parent:focus .scrollbar-fade,
+.scrollbar-fade-parent:hover .scrollbar-fade {
+  scrollbar-color: rgba(0, 0, 0, 0.3) transparent;
+}

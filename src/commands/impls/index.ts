@@ -1,0 +1,11 @@
+import './default'
+import './system'
+import './workpspace'
+import './ui'
+import './tree'
+import './doc'
+import './tab'
+import './lib'
+import './recorder'
+
+import '@renderer/client/test'

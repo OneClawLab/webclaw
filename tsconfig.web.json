@@ -1,0 +1,47 @@
+{
+  "extends": "@electron-toolkit/tsconfig/tsconfig.web.json",
+  // TypeScript 规则是：exclude 会排除 include 中已经包含的文件
+  // 详见：https://www.typescriptlang.org/tsconfig 
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "src/**/node/**/*",  // 所有层级的 node 目录 是 node 专用代码
+    "src/http/**/*",     // 整个 http 目录 是 node 专用代码
+  ],
+  "compilerOptions": {
+    "sourceMap": false,
+    "composite": true,
+    "jsx": "react-jsx",
+    "jsxImportSource": "react",
+    "module": "nodenext",
+    "moduleResolution": "nodenext", // Added to resolve modern modules
+    "esModuleInterop": true,      // Recommended for compatibility
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "noUnusedParameters": false,
+    "noUnusedLocals": false,    
+    "baseUrl": ".",
+    "typeRoots": [
+      "./node_modules/@types",
+      "./src/types"
+    ],    
+    "paths": {
+      "@types/*": ["src/types/*"],
+      "@ai/*": ["src/ai/*"],
+      "@node/*": ["src/node/*"],
+      "@http/*": ["src/http/*"],
+      "@renderer/*": ["src/renderer/*"],
+      "@hack/*": ["src/hack/*"], 
+      "@state/*": ["src/state/*"],
+      "@event/*": ["src/event/*"],
+      "@view/*": ["src/view/*"],
+      "@commands/*": ["src/commands/*"],
+      "@hotkeys/*": ["src/hotkeys/*"],
+      "@lib/*": ["src/lib/*"],
+      "@editor/*": ["src/editor/*"],
+      "@library/*": ["src/library/*"],
+    }
+  }
+}

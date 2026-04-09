@@ -1,0 +1,48 @@
+{
+  "files.eol": "\n",  
+  "[typescript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+ "files.exclude": {
+    "**/.git": true,          // 所有 .git 文件夹
+    "**/.DS_Store": true,     // macOS 的 .DS_Store 文件
+    "**/node_modules": true,  // node_modules 文件夹
+    ".VSCodeCounter": true,   // VSCodeCounter 生成的文件夹
+    "dist/": true,            // 项目根目录下的 dist 文件夹
+    "build/": true,           // 项目根目录下的 build 文件夹
+    "out/": true,             // 项目根目录下的 out 文件夹
+    "*.tmp": true,            // 所有 .tmp 文件
+
+    // 以下并非不需要的垃圾文件，暂时隐藏看起来清爽些。
+    // "**/*.log": true,      // 所有 .log 文件
+    "lancedb_natives/": true, // lancedb_natives 文件夹，lancedb 依赖的二进制。
+    "scripts/": false,        // scripts 文件夹，build过程需要的脚本。
+    ".eidux/": true,
+    ".vscode/": true,
+    ".github/": true,
+    ".editorconfig": true,
+    ".gitignore": true,
+    ".prettierignore": true,
+    ".prettierrc.yaml": true,
+    "eslint.config.mjs": true,
+    "postcss.config.js": true,
+    "tailwind.config.js": true,
+    "electron-builder.config.js": true,
+    "electron.vite.config.ts": false,
+    "package.json": false,
+    "package-lock.json": true,
+    "remove_locales.js": true,
+    "tsconfig.json": true,
+    "tsconfig.dev.json": true,
+    "tsconfig.web.dev.json": true,
+    "tsconfig.node.dev.json": true,
+    "dev-app-update.yml": true,
+    "auto-update-latest.yml": true
+  },
+}

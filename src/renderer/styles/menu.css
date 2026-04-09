@@ -1,0 +1,208 @@
+.MenuContent {
+  min-width: 180px;
+  border-radius: 0.375rem; /* rounded-md */
+  background-color: white;
+  padding: 5px;
+  box-shadow:
+    0px 10px 38px -10px rgba(22, 23, 24, 0.35),
+    0px 10px 20px -15px rgba(22, 23, 24, 0.2);
+  will-change: opacity, transform;
+}
+
+/* 动画方向控制（Radix UI风格） */
+.MenuContent[data-side="bottom"] {
+  animation: slideUpAndFade 0.2s ease-out;
+}
+
+.MenuContent[data-side="top"] {
+  animation: slideDownAndFade 0.2s ease-out;
+}
+
+.MenuContent[data-side="left"] {
+  animation: slideRightAndFade 0.2s ease-out;
+}
+
+.MenuContent[data-side="right"] {
+  animation: slideLeftAndFade 0.2s ease-out;
+}
+
+/* 示例动画关键帧定义（Tailwind 通常由插件提供） */
+@keyframes slideUpAndFade {
+  from {
+    opacity: 0;
+    transform: translateY(2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDownAndFade {
+  from {
+    opacity: 0;
+    transform: translateY(-2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideRightAndFade {
+  from {
+    opacity: 0;
+    transform: translateX(-2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideLeftAndFade {
+  from {
+    opacity: 0;
+    transform: translateX(2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.MenuItem {
+  position: relative;
+  display: flex;
+  height: 25px;
+  user-select: none;
+  align-items: center;
+  border-radius: 3px;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: 13px;
+  line-height: 1; /* leading-none */
+  color: var(--violet11, #111827);
+  outline: none;
+}
+
+.MenuItemWithIndicator {
+  padding-left: 28px;
+}
+
+/* 禁用状态 */
+.MenuItem[data-disabled] {
+  pointer-events: none;
+  color: var(--mauve8);
+}
+
+/* 高亮状态 */
+.MenuItem[data-highlighted] {
+  background-color: var(--menu-item-hover-bg, var(--violet9, #0060C0));
+  color: var(--menu-item-hover-fg, var(--violet1, #ffffff));
+}
+
+/* Hover 状态（确保有悬浮反馈） */
+.MenuItem:not([data-disabled]):hover {
+  background-color: var(--menu-item-hover-bg, var(--violet9, #0060C0));
+  color: var(--menu-item-hover-fg, var(--violet1, #ffffff));
+}
+
+.MenuItemSuffix {
+  margin-left: auto;
+  padding-left: 8px;
+  color: var(--mauve11, #6b7280);
+}
+
+/* 当父元素（带 .group 类）具有 data-disabled 属性时 */
+.group[data-disabled] .MenuItemSuffix {
+  color: var(--mauve8);
+}
+
+/* 当父元素（带 .group 类）具有 data-highlighted 属性时 */
+.group[data-highlighted] .MenuItemSuffix {
+  color: var(--menu-item-hover-fg, #ffffff);
+}
+
+.MenuItem:not([data-disabled]):hover .MenuItemSuffix {
+  color: var(--menu-item-hover-fg, #ffffff);
+}
+
+.MenuItemIndicator {
+  position: absolute;
+  left: 0;
+  display: inline-flex;
+  width: 24px;
+  align-items: center;
+  justify-content: center;
+}
+
+.MenuItemIndicatorOverlay .MenuItemIndicator {
+  left: 2px;
+  width: 16px;
+}
+
+.MenuItemSeparator {
+  display: block;
+  width: 100%;
+  margin-top: 1px;
+  margin-bottom: 1px;
+  height: 1px;
+  background-color: var(--mauve6, #e5e7eb);
+  flex-shrink: 0;
+}
+
+/* Menubar (App menu) styles */
+#AppMenu {
+  background-color: #DDDDDD;
+  border: 1px solid #CCCCCC;
+}
+
+.AppMenuContainer {
+  font-size: 13px;
+}
+
+.MenubarTrigger {
+  font-size: 13px;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  cursor: pointer;
+  user-select: none;
+  border-radius: 0.25rem;
+}
+
+.MenubarTrigger:hover {
+  background-color: #9ca3af;
+}
+
+.MenubarContent {
+  font-size: 13px;
+}
+
+/* Menu Item Components */
+.MenuItemIconSpace {
+  width: 16px;
+  margin-right: 4px;
+  display: inline-block;
+}
+
+.MenuItemSpacer {
+  width: 12px;
+  display: inline-block;
+}
+
+.MenuItemShortcut {
+  font-size: 12px;
+  color: #9ca3af;
+  text-align: right;
+  margin-left: 8px;
+}
+
+.MenuTriggerButton {
+  padding: 4px;
+  border-radius: 0.25rem;
+}
+
+.MenuTriggerButton:hover {
+  background-color: #e5e7eb;
+}

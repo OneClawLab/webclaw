@@ -1,0 +1,400 @@
+{
+  "ui": {
+    "welcome": {
+      "title": "欢迎使用 WebClaw",
+      "subtitle": "请开始您的旅程"
+    },
+    "common": {
+      "moreActions": "更多操作",
+      "search": "搜索...",
+      "filterTree": "过滤树视图..."
+    },
+    "menus": {
+      "app": {
+        "library": {
+          "title": "知识库",
+          "createLibrary": "新建知识库...",
+          "createLibraryTooltip": "创建新知识库，并添加到当前工作区",
+          "createLibraryShortcut": "Mod+Alt+N",
+          "addLibrary": "添加已有知识库...",
+          "addLibraryTooltip": "添加已有知识库到当前工作区",
+          "addLibraryShortcut": "Mod+Alt+O",
+          "saveLibrary": "保存当前知识库",
+          "saveLibraryTooltip": "保存当前知识库的更改",
+          "saveLibraryShortcut": "Mod+Alt+S",
+          "removeLibrary": "移除知识库",
+          "removeLibraryTooltip": "从当前工作区移除知识库",
+          "removeLibraryShortcut": "Mod+Alt+W",
+          "quit": "退出",
+          "quitTooltip": "退出应用",
+          "quitShortcut": "Alt+F4"
+        },
+        "document": {
+          "title": "文档",
+          "newDocument": "新建文档",
+          "newDocumentTooltip": "在当前知识库中新建文档",
+          "newDocumentShortcut": "Mod+N",
+          "openDocument": "打开文档...",
+          "openDocumentTooltip": "从当前知识库中打开文档",
+          "openDocumentShortcut": "Mod+O",
+          "saveDocument": "保存文档",
+          "saveDocumentTooltip": "保存当前文档的更改",
+          "saveDocumentShortcut": "Mod+S",
+          "closeDocument": "关闭文档",
+          "closeDocumentTooltip": "关闭当前文档",
+          "closeDocumentShortcut": "Mod+W"
+        }
+      },
+      "context": {
+        "tree": {
+          "open": "打开",
+          "openTooltip": "打开所选文档或文件夹",
+          "rename": "重命名",
+          "renameTooltip": "重命名所选节点",
+          "renameErrorDuplicate": "同级下已存在同名项目",
+          "delete": "删除",
+          "deleteTooltip": "删除所选节点",
+          "properties": "属性",
+          "propertiesTooltip": "查看所选节点的属性",
+          "newFile": "新建文档",
+          "newFileTooltip": "在所选文件夹中创建新文档",
+          "newFolder": "新建文件夹",
+          "newFolderTooltip": "在所选文件夹中创建新文件夹",
+          "refresh": "刷新",
+          "openInNewTab": "在新标签中打开",
+          "showInExplorer": "在资源管理器中显示",
+          "removeLibrary": "移除知识库",
+          "moveLibraryUp": "上移知识库",
+          "moveLibraryDown": "下移知识库"
+        },
+        "tab": {
+          "close": "关闭",
+          "closeOthers": "关闭其他",
+          "closeAll": "关闭所有",
+          "refresh": "刷新",
+          "pin": "固定",
+          "unpin": "取消固定",
+          "showInExplorer": "在资源管理器中显示"
+        }
+      }
+    },
+    "components": {
+      "tabHandle": {
+        "unpin": "取消固定",
+        "close": "关闭",
+        "closeShortcut": "Mod+W"
+      },
+      "treeView": {
+        "rightActions": {
+          "newFile": "新建文档",
+          "newFolder": "新建文件夹",
+          "refresh": "刷新知识库",
+          "collapseOneLevel": "折叠一级"
+        }
+      },
+      "navbar": {
+        "test": "测试",
+        "settings": "管理"
+      },
+      "notifications": {
+        "updateReadyTitle": "更新准备就绪",
+        "updateReadyMessage": "应用程序有可用更新，是否立即安装？\n\n{{version}}-{{releaseName}}\n{{releaseDate}}\n\n{{releaseNotes}}",
+        "updateReadyActionLabel": "立即更新"
+      }
+    },
+    "dialogs": {
+      "confirm": {
+        "title": "请确认您的操作",
+        "removeLibraryMessage": "您确定要从当前工作区移除知识库 \"{{name}}\" 吗？此操作不会删除磁盘上的文件。",
+        "confirmButton": "确认",
+        "cancelButton": "取消"
+      },
+      "alert": {
+        "title": "消息通知",
+        "okButton": "好的"
+      }
+    },
+    "notifications": {
+      "updateReady": {
+        "title": "更新准备就绪",
+        "message": "应用程序有可用更新，是否立即安装？\n\n{{version}}-{{releaseName}}\n{{releaseDate}}\n\n{{releaseNotes}}",
+        "actionLabel": "立即更新"
+      }
+    }
+  },
+  "commands": {
+    "mainWindow": {
+      "title": "主窗口命令",
+      "commands": {
+        "minimize": "最小化主窗口",
+        "maximize": "最大化主窗口",
+        "close": "关闭主窗口",
+        "closeConfirmTitle": "关闭应用确认",
+        "closeConfirmMessage": "您有 {{count}} 个未保存的文档，确定要关闭应用吗？",
+        "closeConfirmSaveButton": "全部保存",
+        "closeConfirmDiscardButton": "全部丢弃",
+        "closeConfirmCancelButton": "取消"
+      }
+    },
+    "ui": {
+      "title": "界面命令",
+      "commands": {
+        "settings": "设置",
+        "moreTools": "更多工具",
+        "export": "导出",
+        "developerTools": "开发者工具",
+        "commandPalette": "命令面板",
+        "checkForUpdates": "检查更新",
+        "showCommandPalette": "显示命令面板",
+        "hideCommandPalette": "隐藏命令面板",
+        "toggleCommandPalette": "切换命令面板可见性",
+        "toggleAppMenu": "切换应用菜单可见性",
+        "toggleNavBar": "切换导航栏可见性",
+        "toggleOutlineView": "切换大纲视图可见性",
+        "toggleTabArea": "切换标签区域可见性",
+        "toggleSidePanel": "切换侧边栏可见性",
+        "toggleStatusBar": "切换状态栏可见性",
+        "hotkeyTitle": "处理来自主进程的热键输入",
+        "toastTitle": "显示消息通知",
+        "notificationTitle": "显示系统通知",
+        "renameTitle": "开始重命名当前选中节点",
+        "deleteTitle": "删除当前选中节点",
+        "refreshTitle": "刷新当前标签内容"
+      }
+    },
+    "workspace": {
+      "title": "工作区命令",
+      "commands": {
+        "createLibrary": "创建新知识库",
+        "createLibraryDesc": "创建新知识库并添加到当前工作区",
+        "addLibrary": "添加已有知识库",
+        "addLibraryDesc": "将已有知识库添加到当前工作区",
+        "removeLibrary": "移除知识库",
+        "removeLibraryDesc": "从当前工作区移除指定知识库",
+        "saveLibrary": "保存知识库",
+        "saveLibraryDesc": "保存指定知识库的更改",
+        "refreshLibrary": "刷新知识库和树视图",
+        "refreshLibraryDesc": "刷新指定知识库及其对应的树视图",
+        "refreshAllLibraries": "刷新所有知识库",
+        "refreshAllLibrariesDesc": "刷新当前工作区中的所有知识库及其对应的树视图",
+        "moveLibraryPosition": "上下调整知识库位置",
+        "moveLibraryPositionDesc": "在工作区中上下调整指定知识库的位置"
+      }
+    },
+    "tree": {
+      "title": "树视图命令",
+      "commands": {
+        "toggleHeaderExpand": "切换整个树的展开状态",
+        "toggleNodeExpand": "切换指定节点的展开状态",
+        "collapseOneLevel": "将树节点折叠一级",
+        "setFilter": "为树视图设置过滤器",
+        "selectNode": "选择指定节点",
+        "syncNodeToActiveTab": "将树节点同步到活动标签对应的文档",
+        "startRenameNode": "开始重命名指定节点",
+        "cancelRenameNode": "取消重命名指定节点",
+        "commitRenameNode": "提交重命名指定节点",
+        "startNewNode": "开始在指定节点下新建子节点",
+        "cancelNewNode": "取消新建节点",
+        "commitNewNode": "提交新建节点",
+        "deleteNode": "删除指定节点",
+        "navigateNext": "导航到下一个节点",
+        "navigatePrev": "导航到上一个节点",
+        "navigateFirst": "导航到第一个节点",
+        "navigateLast": "导航到最后一个节点",
+        "navigateLeft": "向左导航（折叠/父节点）",
+        "navigateRight": "向右导航（展开/子节点）",
+        "activateNode": "激活指定节点或当前聚焦节点"
+      }
+    },
+    "tab": {
+      "title": "标签命令",
+      "commands": {
+        "newTab": "新建标签",
+        "openTab": "打开标签",
+        "saveTab": "保存标签",
+        "refreshTab": "刷新标签",
+        "closeTab": "关闭标签",
+        "closeOthers": "关闭其他标签",
+        "closeAll": "关闭所有标签",
+        "pinTab": "固定/取消固定标签",
+        "autoScroll": "设置标签自动滚动",
+        "switchTab": "切换标签",
+        "nextRecent": "切换到最近使用的下一个标签",
+        "prevRecent": "切换到最近使用的上一个标签",
+        "nextPosition": "切换到右侧下一个标签",
+        "prevPosition": "切换到左侧上一个标签",
+        "updateStatus": "更新标签状态",
+        "dumpContent": "在新标签中导出内容",
+        "dumpContentDesc": "在新标签中显示指定内容",
+        "openEiduxLink": "打开链接",
+        "openEiduxLinkDesc": "在新标签中打开指定的链接"
+      }
+    },
+    "editor": {
+      "title": "编辑器命令",
+      "commands": {
+        "refresh": "刷新编辑器",
+        "refreshDesc": "刷新当前标签的编辑器内容",
+        "indentMore": "增加缩进",
+        "indentMoreDesc": "增加选中文本的缩进级别",
+        "indentLess": "减少缩进",
+        "indentLessDesc": "减少选中文本的缩进级别",
+        "expandMore": "增加可见级别",
+        "expandMoreDesc": "增加选中文本的可见级别",
+        "collapseMore": "减少可见级别",
+        "collapseMoreDesc": "减少选中文本的可见级别",
+        "toggleBold": "切换粗体",
+        "toggleBoldDesc": "为选中文本添加或移除粗体标记",
+        "toggleItalic": "切换斜体",
+        "toggleItalicDesc": "为选中文本添加或移除斜体标记",
+        "toggleStrikethrough": "切换删除线",
+        "toggleStrikethroughDesc": "为选中文本添加或移除删除线标记",
+        "toggleUnderline": "切换下划线",
+        "toggleUnderlineDesc": "为选中文本添加或移除下划线标记",
+        "toggleHighlight": "切换高亮",
+        "toggleHighlightDesc": "为选中文本添加或移除高亮标记",
+        "toggleInlineCode": "切换行内代码",
+        "toggleInlineCodeDesc": "为选中文本添加或移除行内代码标记",
+        "toggleCodeBlock": "切换代码块",
+        "toggleCodeBlockDesc": "为选中文本添加或移除代码块标记"
+      }
+    },
+    "system": {
+      "title": "系统命令",
+      "commands": {
+        "showInExplorer": "在资源管理器中显示",
+        "showInExplorerDesc": "在系统文件资源管理器中显示指定文件",
+        "showInExplorerErrorUnsaved": "无法显示未保存的文档",
+        "openInBrowser": "在浏览器中打开",
+        "openInBrowserDesc": "在系统默认浏览器中打开指定的 URL",
+        "updateReady": "更新准备就绪"
+      }
+    },
+    "settings": {
+      "title": "设置命令",
+      "commands": {
+        "showStaticMemory": "在新标签中显示静态聊天记忆"
+      }
+    },
+    "recorder": {
+      "title": "录制器命令",
+      "commands": {
+        "exportAppState": "导出应用状态",
+        "exportAppStateInMain": "在主进程中导出应用状态",
+        "exportVectordbStats": "导出 Vectordb 状态"
+      }
+    },
+    "document": {
+      "title": "文档命令",
+      "commands": {
+        "saveDocument": "保存文档",
+        "openDocument": "打开文档",
+        "updateHasChatMemoryStatus": "更新聊天记忆状态",
+        "updateHasChatMemoryStatusDesc": "为指定文档更新聊天记忆状态"
+      }
+    },
+    "default": {
+      "title": "默认命令",
+      "commands": {
+        "echo": "回显消息"
+      }
+    },
+    "runtime": {
+      "title": "运行时命令",
+      "commands": {}
+    },
+    "ai": {
+      "title": "AI 命令",
+      "commands": {
+        "askAI": "向 AI 提问或输入指令...",
+        "askAIDesc": "使用选中内容作为提示，向 AI 提问，并将回答流式写入编辑器"
+      }
+    }
+  },
+  "ai": {
+    "commands": {
+      "askAi": "向 AI 提问或输入指令...",
+      "askAiDesc": "使用选中内容作为提示，向 AI 提问，并将回答流式写入编辑器"
+    },
+    "hints": {
+      "document": {
+        "unconfigured": "AI 功能尚未正确配置，服务当前不可用。请阅读 {{link}} 解决。"
+      },
+      "toast": {
+        "emptyDocBefore": "再按一次用整个文档内容作为问题向AI提问。",
+        "emptyDocAfter": "请输入要提问的内容，然后再按一次向AI提问。",
+        "emptyDocMiddle": "要向AI提问，请在文档最前或最后 按 {{ModEnter}}。",
+        "alreadyQuoted": "已引用您选择的内容，您可以继续补充内容，或再按一次向AI提问。",
+        "missingCustomPrompt": "`custom` 智能代理 需要在文档开头添加 SYSTEM PROMPT，详情参见 `HowTo.md` 。"
+      },
+      "inline": {
+        "emptyDocStart": "按 {{ModEnter}} 在此处插入 AI 提问小节",
+        "noPromptYet": "按 / 调用快捷命令，按 @ 添加更多信息",
+        "hasPrompt": "按 {{ModEnter}} 发送提问",
+        "insertNewQuestion": "按 {{ModEnter}} 插入新的提问小节",
+        "quoteSelection": "按 {{ModEnter}} 引用选择的内容到新的 AI 提问小节"
+      }
+    },
+    "errors": {
+      "unconfigured": "AI 功能尚未正确配置，服务当前不可用。",
+      "serviceError": "AI 服务遇到错误，请检查您的配置。",
+      "readyWithAgent": "AI 功能正常，当前智能代理为: {{agent}}",
+      "aiTestOk": "AI 功能正常，测试通过!",
+      "aiUnconfigured": "AI 功能尚未正确配置，服务当前不可用。",
+      "aiTestFail": "AI 功能测试未通过，请检查您的配置或网络连接。",
+      "failToResolveLink": "无法解析链接: {{link}}",
+      "fileNotFoundForLink": "文件未找到: {{link}} -> {{realpath}}",
+      "failToOpenDirectory": "无法打开目录: {{link}} -> {{realpath}}"
+    }
+  },
+  "defaults": {
+    "newFolder": "新建文件夹",
+    "untitled": "未命名",
+    "untitledDocument": "未命名文档",
+    "untitledMd": "untitled.md"
+  },
+  "errors": {
+    "validation": {
+      "nameCannotBeEmpty": "名称不能为空",
+      "nameContainsInvalidChars": "名称包含无效字符: / \\ : * ? \" < > |",
+      "nameIsReserved": "名称 \"{{name}}\" 是保留名称",
+      "libraryPathEmpty": "知识库 ID {{libId}} 的路径为空"
+    },
+    "general": {
+      "reactComponentError": "React 组件错误！",
+      "deleteConfirmationTitle": "删除确认",
+      "deleteConfirmationMessage": "您确定要删除 {{count}} 个文件/文件夹吗？此操作无法撤销。",
+      "deleteButton": "删除",
+      "cancelButton": "取消"
+    },
+    "context": {
+      "logViewProviderNotFound": "LogViewProvider 未找到"
+    }
+  },
+  "views": {
+    "debugWindow": {
+      "title": "调试窗口",
+      "empty": "空"
+    },
+    "chatPanel": {
+      "title": "AI 会话",
+      "greeting": "AI: 有什么可以帮您？",
+      "inputPlaceholder": "输入消息..."
+    },
+    "commandPalette": {
+      "searchPlaceholder": "搜索命令..."
+    }
+  },
+  "hints": {
+    "tab.save": "按 {{shortcut}} 保存文档",
+    "workspace.name": "用于区分不同的工作区"
+  },
+  "settings": {
+    "language": {
+      "title": "语言",
+      "auto": "跟随系统",
+      "en": "English", 
+      "zh": "中文"
+    }
+  }
+}

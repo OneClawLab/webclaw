@@ -1,0 +1,25 @@
+#NavBar {
+  width: 48px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  gap: 8px;
+  background-color: #2C2C2C;
+  color: white;
+}
+
+.NavIconButton {
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  color: #808080;
+  cursor: pointer;
+}
+
+.NavIconButton:hover {
+  color: white;
+  cursor: pointer;
+}
+
+.NavIconButton > .active {
+  color: white;
+}

@@ -1,0 +1,149 @@
+/* 最上层的对话框 */
+[data-radix-dialog-content] {
+  z-index: 1000;
+}
+
+/* 菜单和弹出层 */
+[data-radix-menu-content] {
+  z-index: 500;
+}
+
+/* tooltip 通常最低 */
+[data-radix-tooltip-content] {
+  z-index: 200;
+}
+
+/* ///////////////////////////////////////////////////////// */
+
+/***** TreeView *****/
+
+#TreeView {
+  background-color: #F3F3F3;
+}
+
+#TreeView:focus-within {
+  border-right: 2px solid #0060C0;
+}
+
+/***** TreeHeader *****/
+
+#TreeHeader {
+  padding-right: 0.5rem;
+  border-top: 1px solid #D0D0D0;
+  cursor: pointer;
+}
+
+#TreeHeader:focus {
+  box-shadow: 0 0 0 1px #3399ff;
+}
+
+.TreeHeaderLabel {
+  color: black;
+  font-weight: 500;
+}
+
+/***** TreeHeader里 右侧的 RightActionsWrapper *****/
+
+#TreeHeader #RightActionsWrapper {
+  opacity: 0;
+  pointer-events: auto;
+}
+
+#TreeView.Focused #RightActionsWrapper,
+#TreeView:hover #RightActionsWrapper {
+  opacity: 1;
+}
+
+/****** TreeNode ******/
+
+.TreeNodeRow {
+  cursor: pointer;
+  box-shadow: none;
+}
+
+.TreeNode {
+  background: transparent;
+}
+
+/* TreeNode 的外框，仅在 TreeView 有焦点，并且不在编辑态时显示 */
+#TreeView.Focused .TreeNode.Focused:not(.Editing) {
+  box-shadow: 0 0 0 1px #0060C0;
+}
+
+/* 默认的 选中的 TreeNode */
+.TreeNode.Selected {
+  background-color: #E4E6F1;
+  color: black;
+}
+
+/* TreeView 有焦点时，选中的 TreeNode 更明显  */
+#TreeView.Focused .TreeNode.Selected:not(.Editing) {
+  background-color: #0060C0;
+  color: white;
+}
+
+.TreeNode:hover {
+  background-color: #E8E8E8;
+  color: black;
+}
+
+/* .TreeNode.Selected:hover {
+  background-color: #0060C0;
+  color: white;
+} */
+
+/* TreeNode 里的 Label */
+
+.TreeNodeLabel {
+  display: block;
+  width: 100%;
+  white-space: nowrap;
+  overflow-x: hidden;
+  padding-left: 2px;
+  padding-right: 1px;
+}
+
+/***** TreeNode 的编辑状态 *****/
+
+/* 包裹输入框的容器 */
+.TreeNodeEditingWrapper {
+  padding-left: 2px;
+  padding-right: 1px;
+}
+
+/* 输入框本体 */
+.TreeNodeEditingInput {
+  width: 100%;
+  /* 稍微缩小字体，模仿VS Code的做法 */
+  font-size: 0.9em;
+  /* 确保输入框高度与普通标签一致 */
+  line-height: inherit;
+  border: none;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+}
+
+.TreeNodeEditingInput:focus-visible {
+  background-color: white;
+  color: black;
+  box-shadow: 0 0 0 1px #0060C0;
+  outline: none;
+  /* 添加内边距，让选中文字的背景与外框有间距 */
+  padding: 1px 2px;
+}
+
+/* 选中文字的背景样式，比外框小一点 */
+.TreeNodeEditingInput::selection {
+  background-color: #0060C0;
+  color: white;
+}
+
+/* 输入框下方的错误提示框 */
+.TreeNodeEditingError {
+  box-shadow: 0 0 0 1px red;
+  font-size: 12px;
+  background-color: white;
+  color: black;
+  margin-top: 1px;
+}

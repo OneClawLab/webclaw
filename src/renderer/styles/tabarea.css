@@ -1,0 +1,235 @@
+#TabArea {
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-color: #E5E5E5;
+  background-color: #F3F3F3;
+}
+
+#TabBar {
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-color: #E5E5E5;
+  background-color: #F3F3F3;
+}
+
+#TabHandles {
+  white-space: nowrap;
+  overflow-x: hidden; /* 默认隐藏横向滚动 */
+  scroll-behavior: smooth; /* 平滑滚动 */
+}
+
+#TabHandles:hover {
+  overflow-x: auto; /* 鼠标悬停时启用横向滚动 */
+}
+
+#TabHandles::-webkit-scrollbar {
+  display: none; /* 隐藏滚动条 */
+}
+
+/* TabHandles 比较多时，最左最右可见页签的 渐变效果 （表示还有更多内容) */
+.TabHandlesEdgeFade {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1.5rem; /* w-6 */
+  pointer-events: none;
+  opacity: 0;   /* 默认隐藏 */
+  transition: opacity 0.3s ease;
+}
+
+.TabHandlesEdgeFade.Visible {
+  opacity: 1;   /* 显示 */
+}
+
+.TabHandlesEdgeFade.Left {
+  background: linear-gradient(to right, rgba(100, 180, 255, 0.45), transparent);
+}
+.TabHandlesEdgeFade.Right { 
+  background: linear-gradient(to left, rgba(100, 180, 255, 0.45), transparent);
+}
+
+/* TabHandles 左右滚动按钮 的 样式 */
+.ScrollButton {
+  position: absolute;
+  z-index: 99;
+  padding: 8px;
+  background-color: rgba(100, 180, 255, 0.45);
+  border-radius: 9999px; /* 完全圆形 */
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.ScrollButton:hover {
+  color: white;
+  background-color: #0060C0;
+}
+
+/* ScrollButton 的呼吸发光效果（带轻微蓝色调） */
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 0px rgba(100, 180, 255, 0.8); }
+  50% { box-shadow: 0 0 8px rgba(100, 180, 255, 0.8); }
+}
+
+/* ScrollButton 的 水平抖动效果（更柔和） */
+@keyframes shakeX {
+  0%, 100% { transform: translateY(-50%) translateX(0); }
+  25% { transform: translateY(-50%) translateX(-2px); }
+  75% { transform: translateY(-50%) translateX(2px); }
+}
+
+/* Editor Tab Wrapper 样式 */
+.EditorTabWrapper {
+  flex: 1;
+  min-height: 0;
+}
+
+.EditorTabWrapper.Active {
+  display: flex;
+}
+
+.EditorTabWrapper.Hidden {
+  display: none;
+}
+
+.TabHandle {
+  padding: 8px 8px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-color: white;
+  color: gray;
+  background-color: #ECECEC;
+  scroll-margin-left: 4em;
+  scroll-margin-right: 4em;
+  border-bottom-width: 0;
+}
+
+/* ActiveTab 的 TabHandle 样式 */
+.TabHandle.Active {
+  font-weight: bold;
+  background-color: white;
+  z-index: 10;
+  border-bottom-width: 2px;
+  border-bottom-color: #0060C0;
+}
+
+div.DraggingOver {
+  border-left-width: 3px;
+  border-left-color: #64B4FF; /* 蓝色边框 */
+}
+
+/* 编辑状态下的TabHandle显示旋转动画 */
+.TabHandle > .editing {
+  animation: spin 3s linear infinite;
+}
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* TabHandle中的标题样式 */
+.TabHandleTitle {
+  display: inline-block;
+  max-width: 384px;  /* 最大文字长度，大概是 48 个字符 */
+  min-width: 16px;   /* 最小文字长度，大概是 2 个字符 */
+  margin-left: 4px;
+  overflow-x: hidden;
+  text-overflow: ellipsis; /* 文字太长的话 显示省略号 */
+  white-space: nowrap;
+}
+
+/* 有 Chat Memory 的 TabHandle 标题样式 */
+.TabHandleTitle.HasChatMemory {
+  border-bottom: 1px solid rgba(137, 220, 235, 0.4);
+  color: #4fc1ff; /* 柔和亮蓝色 */
+}
+
+
+/* dirty 的 TabHandle 标题样式 */
+.TabHandleTitle.Dirty {
+  font-weight: 500;
+  color: #A27C3F; /* 柔和橙色 */
+}
+
+/* 失效文档 的 TabHandle 标题样式 */
+.TabHandleTitle.Outdated {
+  font-style: italic;
+  color: orange;
+}
+
+/* 已删除文档 的 TabHandle 标题样式 */
+.TabHandleTitle.Deleted {
+  font-style: line-through;
+  color: red;
+}
+
+.TabHandleTitle.Highlight {
+  font-weight: 500;
+  color: black;
+  background-color: yellow;
+}
+
+/* TabHandle上的操作按钮 */
+.TabHandleActionButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  margin-left: 8px;
+  color: transparent; /* 默认隐藏按钮内容 */
+  cursor: pointer;
+}
+
+/* TabHandle 上的 一直静态显示的按钮，比如 pinned 图标 */
+.TabHandleActionButtonStatic {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  margin-left: 8px;
+  color: gray; /* 始终显示按钮内容 */
+  cursor: pointer;
+}
+
+/* Hover 和 Active 状态下显示按钮内容 */
+.TabHandle:hover .TabHandleActionButton,
+.TabHandle:hover .TabHandleActionButtonStatic {
+  color: gray; /* Hover 到TabHandle时 显示按钮 */
+}
+.TabHandle.Active .TabHandleActionButton,
+.TabHandle.Active .TabHandleActionButtonStatic {
+  color: gray; /* Active 状态下 显示按钮 */
+}
+
+/* Hover 到按钮时的样式 */
+.TabHandleActionButton:hover,
+.TabHandleActionButtonStatic:hover {
+  background-color: #E0E0E0;
+  color: black;
+  border-radius: 2px;
+}
+
+.NewTabButton {
+  padding: 8px 8px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-color: white;
+  color: gray;
+  scroll-margin-left: 4em;
+  scroll-margin-right: 4em;  
+}
+
+.NewTabButton:hover {
+  background-color: #E0E0E0;
+  color: black;
+  border-radius: 2px;
+}

@@ -1,0 +1,10 @@
+version: 1.0.0
+releaseName: preview
+files:
+  - url: Eidux-1.0.0-setup.exe
+    sha512: <SHA512_HASH_PLACEHOLDER>
+    size: 88888888
+path: Eidux-1.0.0-setup.exe
+sha512: <SHA512_HASH_PLACEHOLDER>
+releaseDate: '2025-12-31'
+releaseNotes: 若干细节改进与问题修复。

@@ -1,0 +1,99 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Run Shell Test (TSX Node)",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/test/src/index.ts",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["tsx"],
+      "cwd": "${workspaceFolder}/test",
+      "autoAttachChildProcesses": true,
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "skipFiles": ["<node_internals>/**"]
+    },
+    {
+      "name": "Attach Main Process",
+      "type": "node",
+      "request": "attach",
+      // 主进程调试端口
+      // 需与 package.json 中 npm run dev 的 启动参数中 --inspect=5858 保持一致，
+      // 走Node调试协议
+      "port": 5858,
+      "restart": true,
+      "skipFiles": ["<node_internals>/**"]
+    },
+    {
+      "name": "Attach Renderer Process",
+      "type": "chrome",
+      "request": "attach",
+       // 渲染进程调试端口
+       // 需与 package.json 中 npm run dev 的 启动参数中 --remote-debugging-port=9222 保持一致
+       // 走Chrome调试协议
+      "port": 9222,
+      "webRoot": "${workspaceFolder}/src",
+      "sourceMapPathOverrides": {
+        // 1. 处理 /@fs/C:/Eidux/src/... 这种结构
+        "http://localhost:5173/@fs/*": "*",
+        // 2. 处理 /components/AppMenu.tsx 这种结构
+        "http://localhost:5173/*": "${workspaceFolder}/src/renderer/*",
+        // 3. 处理 vite:// 这种结构
+        "vite:///*": "${workspaceFolder}/*"
+      },
+    },
+    {
+      "name": "Debug Main Process",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceRoot}",
+      "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/electron-vite",
+      "windows": {
+        "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/electron-vite.cmd"
+      },
+      "runtimeArgs": [
+        "dev", // 必须指定 dev 指令
+        "--sourcemap",
+        "--inspect=5858", // 开启主进程调试
+        "--remote-debugging-port=9222" // 开启渲染进程调试
+      ],
+      "env": {
+        "DEBUG": "llamaindex:*",
+        "NODE_OPTIONS": "--enable-source-maps"
+      },
+    },
+    {
+      "name": "Debug Renderer Process",
+      "port": 9222,
+      "request": "attach",
+      "type": "chrome",
+// 下面这两句可以让 VS Code 在 Debug Console 中显示更多调试信息，排查问题时可以打开
+// "trace": true,
+// "internalConsoleOptions": "openOnSessionStart",
+      "webRoot": "${workspaceFolder}/src",
+      "sourceMapPathOverrides": {
+        // 1. 处理 /@fs/C:/Eidux/src/... 这种结构
+        "http://localhost:5173/@fs/*": "*",
+        // 2. 处理 /components/AppMenu.tsx 这种结构
+        "http://localhost:5173/*": "${workspaceFolder}/src/renderer/*",
+        // 3. 处理 vite:// 这种结构
+        "vite:///*": "${workspaceFolder}/*"
+      },
+      "timeout": 60000,
+      "presentation": {
+        "hidden": true
+      }
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Debug All",
+      "configurations": ["Debug Main Process", "Debug Renderer Process"],
+    },
+    {
+      "name": "Attach All",
+      "configurations": ["Attach Main Process", "Attach Renderer Process"]
+    },
+  ]
+}
