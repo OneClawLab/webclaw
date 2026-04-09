@@ -32,7 +32,7 @@ WebClaw 是基于 Eidux 改造的 TheClaw agent 运行时系统的全功能桌�
 - @kb/ 引用语法，发送时展开为 POSIX 绝对路径
 
 ### xgw 通信
-- 通过 WebSocket 连接 xgw WebUI Plugin（默认 127.0.0.1:28211）
+- 通过 WebSocket 连接 xgw WebUI Plugin（默认 127.0.0.1:29212）
 - 单连接多会话复用（conversation_id 路由）
 - 流式响应（stream_chunk/stream_end）、进度事件（thinking/tool_call 等）
 - 指数退避重连、心跳保活、离线消息队列

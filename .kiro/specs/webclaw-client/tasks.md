@@ -132,7 +132,7 @@
   - [x] 7.1 新增 connection slice
     - 在 `src/state/slices/connection/` 中创建 connection slice
     - 管理状态：status、host、port、channelId、peerId、lastHeartbeat、reconnectAttempt、error
-    - 默认值：host='127.0.0.1'、port=28211、channelId='webui:default'、peerId='owner'
+    - 默认值：host='127.0.0.1'、port=29212、channelId='webui:default'、peerId='owner'
     - _需求: 15.1, 10.3_
 
   - [x] 7.2 新增 agent slice

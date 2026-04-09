@@ -30,7 +30,7 @@ WebClaw (Electron)                    TheClaw (同机部署)
 ┌─────────────────────┐               ┌──────────────┐
 │  Renderer Process   │               │  xgw daemon   │
 │  React + Redux      │               │  WebUI Plugin │
-│  CodeMirror Editor  │               │  :28211       │
+│  CodeMirror Editor  │               │  :29212       │
 │  window.xgw (IPC)  │               └──────┬───────┘
 └────────┬────────────┘                      │ IPC
          │ Electron IPC                      │
@@ -110,7 +110,7 @@ webclaw/                        #
 ### 前置条件
 
 - Node.js >= 22
-- TheClaw 已部署并运行（xgw daemon 监听 127.0.0.1:28211）
+- TheClaw 已部署并运行（xgw daemon 监听 127.0.0.1:29212）
 
 ### 安装
 
@@ -143,7 +143,7 @@ npm run release:linux   # Linux
 
 ## 连接配置
 
-WebClaw 默认连接 `127.0.0.1:28211`（xgw WebUI Plugin 端口）。
+WebClaw 默认连接 `127.0.0.1:29212`（xgw WebUI Plugin 端口）。
 
 可通过状态栏的连接图标打开设置面板，配置：
 - Host / Port

@@ -164,7 +164,7 @@ Webclaw 是基于 Eidux 桌面应用改造的 TheClaw agent 运行时系统的�
 
 1. THE Webclaw SHALL 提供 Connection_Settings UI，允许用户配置 xgw 的 host、port、channel_id 和 peer_id
 2. THE Webclaw SHALL 将 Connection_Settings 持久化到本地配置文件中
-3. THE Webclaw SHALL 提供默认连接配置：host 为 127.0.0.1，port 为 28211，channel_id 为 webui:default，peer_id 为 owner
+3. THE Webclaw SHALL 提供默认连接配置：host 为 127.0.0.1，port 为 29212，channel_id 为 webui:default，peer_id 为 owner
 4. WHEN 用户修改 Connection_Settings 并保存时，THE Main_Process SHALL 断开当前 WebSocket 连接并使用新配置重新连接
 5. THE Webclaw SHALL 在连接设置界面显示当前连接状态（未连接、连接中、已连接、重连中）
 

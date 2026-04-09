@@ -82,7 +82,7 @@ graph TB
     end
     
     subgraph "TheClaw (同机部署)"
-        XGW[xgw daemon<br/>WebUI Plugin<br/>:28211]
+        XGW[xgw daemon<br/>WebUI Plugin<br/>:29212]
         XAR[xar daemon<br/>Agent Runtime]
         XGW <-->|IPC| XAR
     end
@@ -241,7 +241,7 @@ Main Process 中的 WebSocket 客户端，管理与 xgw WebUI Plugin 的连接�
 
 interface XgwClientConfig {
   host: string       // 默认 127.0.0.1
-  port: number       // 默认 28211
+  port: number       // 默认 29212
   channelId: string  // 默认 webui:default
   peerId: string     // 默认 owner
 }
@@ -464,7 +464,7 @@ class WebUIPlugin {
 interface ConnectionState {
   status: 'disconnected' | 'connecting' | 'connected' | 'authenticated' | 'reconnecting'
   host: string           // 默认 '127.0.0.1'
-  port: number           // 默认 28211
+  port: number           // 默认 29212
   channelId: string      // 默认 'webui:default'
   peerId: string         // 默认 'owner'
   lastHeartbeat: number  // Unix timestamp, 0 = never

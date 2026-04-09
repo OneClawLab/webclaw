@@ -100,7 +100,7 @@ function ConnectionSettings({ onClose }: Props): React.JSX.Element {
               value={port}
               onChange={(e) => setPort(e.target.value)}
               className="w-full border border-gray-300 rounded px-3 py-1.5 text-sm focus:outline-none focus:border-blue-400"
-              placeholder="28211"
+              placeholder="29212"
             />
           </div>
           <div>
