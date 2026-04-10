@@ -1,7 +1,7 @@
 import { Logger } from "@lib/logast.js"
 import { path } from "@lib/path.js"
 import { PATH_KBS } from "@lib/paths.js"
-import { getSlashCommands } from "./SlashCommands.js"
+import { getSlashCommands, asyncLoadSlashCommands } from "./SlashCommands.js"
 
 export type DocRange = { from: number, to: number }
 
@@ -127,10 +127,11 @@ export function parsePrompt(input: string, knownNames?: KnownNames): ParsedPromp
 
 // 执行 ParsedPrompt，调用相应的命令/引用，生成 PreparedPrompt 结构
 export async function preparePrompt(prompt: string): Promise<PreparedPrompt> {
-  // 取得已知的命令/引用 名称集合，以便语法解析时使用
+  // 确保 slash commands 已加载（异步，等待完成）
+  const commands = await asyncLoadSlashCommands().catch(() => new Map<string, import('./SlashCommands.js').SlashCommand>());
 
   const knownNames: KnownNames = {
-    commands: new Set(getSlashCommands().keys()),
+    commands: new Set([...commands.keys()].map(k => k.replace(/^\//, ''))),
     // references: ... // TODO: 填充已知引用名称
   };
 
@@ -179,12 +180,11 @@ export async function preparePrompt(prompt: string): Promise<PreparedPrompt> {
 
   let rendered_text = raw_text;
   if (mainCommand) {
-    const cmd = getSlashCommands().get(mainCommand!.name);
+    const cmd = commands.get('/' + mainCommand.name);
     if (!cmd)
-      Logger.error(`Slash Command not found: ${mainCommand!.name}`);
+      Logger.error(`Slash Command not found: ${mainCommand.name}`);
     if (cmd && !cmd.template)
-      Logger.error(`Slash Command has no template: ${mainCommand!.name}`);
-    // 把 prompt.text 填入模板
+      Logger.error(`Slash Command has no template: ${mainCommand.name}`);
     rendered_text = cmd && cmd.template && cmd.template.replace('{{text}}', raw_text) || raw_text;
   }
 
