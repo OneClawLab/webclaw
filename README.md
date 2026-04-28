@@ -2,7 +2,7 @@
 
 > **TheClaw 桌面客户端**
 
-WebClaw 是基于 Eidux 改造的 [TheClaw](https://github.com/user/theclaw) agent 运行时系统的全功能桌面客户端。通过 WebSocket 连接 xgw 通信网关，与 TheClaw 的多 agent 体系交互。保留了 Eidux 的 Markdown 编辑器、知识库管理等核心前端能力，所有 AI 能力由 TheClaw 的 xar + xgw + pai 提供。
+WebClaw 是基于 Eidux 改造的 [TheClaw](https://github.com/TheClawLab/TheClaw) agent 运行时系统的全功能桌面客户端。通过 WebSocket 连接 xgw 通信网关，与 TheClaw 的多 agent 体系交互。保留了 Eidux 的 Markdown 编辑器、知识库管理等核心前端能力，所有 AI 能力由 TheClaw 的 xar + xgw + pai 提供。
 
 ---
 
